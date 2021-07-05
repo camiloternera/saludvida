@@ -1,27 +1,30 @@
 :root {
     /* Variables colores */
     --color-primario: #111111;
-    --color-secundario: #84c2ff;
-    --color-c:#2493ff;
+    --color-secundario: #3094C8;
+    --color-logo: rgb(36,146,225,0.55);
+    --color-c: #2E8AB9;
     --color-d:white;
     --color-e:#f6f6f6;
     --color-f:rgb(80,80,80);
   }
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+  
+.color-logo {
+  color: var(--color-logo);
+}
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    text-decoration: none;
-    font-family: Roboto Condensed;
+    text-decoration: none; 
 }
 
 html {
   font-size: 62.5%;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  color: var(--color-secundario);
+  font-family: Roboto Condensed;
 }
 
 body {
@@ -47,6 +50,8 @@ body {
 .ContainerDashB a{
   color: var(--color-d);
 }
+
+
 .DashLogo{
   display: flex;
   padding-left: 2rem;
@@ -54,12 +59,13 @@ body {
   width: 100%;
   height: 15rem;
   background: white;
-  font-size: 5.2rem;
+  font-size:4rem;
+  font-weight: 550;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .DashLogo span{
   color: var(--color-f);
   font: arial;
-  font-weight: 500;
 }
 #colorB{
   color: var(--color-secundario);
@@ -67,33 +73,60 @@ body {
   font-weight: 500;
 }
 #colorC{
-  color:var(--color-secundario)
+  color:var(--color-logo)
 }
-ul{
+
+.submenu__infoPersonal,
+.submenu__citas{
   list-style: none;
-}
-ul li{
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-  width: 100%;
-  height: 6rem;
-  background: var(--color-c);
-  border-bottom: solid 1px var(--color-secundario);
-  padding-left: 7rem;
-  transition: 0.3s;
   display: none;
 }
+
+.submenu__infoPersonal-item,
+.submenu__cita-item{
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  width: 100%;
+  height: 4rem;
+  margin: 0;
+  background: white;
+  border-bottom: 0.5px solid var(--color-secundario);
+  padding-left: 7rem;
+  transition: 1s;
+  cursor: pointer;
+  animation-name: animacion-menu;
+  animation-duration: 0.2s;
+}
+
+.submenu__cita-item:hover{
+  background: rgb(214, 214, 214);
+
+}
+.submenu__infoPersonal-item a,
+.submenu__cita-item a{
+color: black;
+}
+
+@keyframes animacion-menu{
+  from {height: 0; opacity: 1;}
+  to {height:4rem; opacity: 1;}
+
+} 
+
 .DashBItem{
   display: flex;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1.9rem;
   width: 100%;
-  height: 6rem;
+  height: 5rem;
+  color: white;
   background: var(--color-c);
   border-bottom: solid 1px var(--color-secundario);
   padding-left: 2.5rem;
   transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
 }
 .DashBItem:hover{
   background: var(--color-secundario);
@@ -210,7 +243,6 @@ ul li{
   height: 87.5%;
   display: flex;
   align-items: center;
-  border: solid 1px blue;
   right: -100px;
 }
 .divBtnPerson{
@@ -250,13 +282,11 @@ ul li{
 
 
 /* mostrar bordes de cajas */
-.mainContent div{
- /* border: solid 1px rebeccapurple; */
- }
+
 .ContLeft{
-   /* border: solid 1px red; */
+  width: 70%;
  }
 .ContRight{
-  /* border: solid 1px red; */
+  width: 30%;
 }
 

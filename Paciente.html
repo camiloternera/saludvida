@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Styles2/Styles.css">
+    <link rel="stylesheet" href="/css/paciente.css">
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+
     <title>SaludVida</title>
-    <script src="https://kit.fontawesome.com/8582a0674c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- dashboard -->
@@ -21,45 +25,49 @@
         <div class="DashContent">
             
             <div class="DashLogo">
-                <a href=""><span id="colorB">+</span></a>
-                <a href=""><span id="colorA">Salud</span></a>
-                <a href=""><span id="colorC">Vida</span></a>
+                <a href="#">
+                    <i class="color-logo fas fa-plus"></i>
+                    <span id="colorA">Salud</span><span id="colorC">Vida</span>
+                </a>
             </div>
 
             <div class="DashBItem">
                 <div class="icons">
                     <a href=""> <i class="fas fa-virus"></i></a>
                 </div>
-                <a href="">Información covid</a>  
+                <p>Información covid</p> 
             </div>
-            <ul>
-                <li><a href="">holis</a></li>
-                <li><a href="">holis</a></li>
-                <li><a href="">holis</a></li>
-                <li><a href="">holis</a></li>
-            </ul>
-            
-
+ 
             <div class="DashBItem">
                 <div class="icons">
                     <a href=""> <i class="fas fa-calendar-alt"></i></a>
                 </div>
-                <a href="">Citas médicas</a>
+                Citas médicas
             </div>
+            <ul class="submenu__citas">
+                <li class="submenu__cita-item"><a href="#">Solicitar cita</a></li>
+                <li class="submenu__cita-item"><a href="#">Consultar y eleminar citas</a></li>
+                <li class="submenu__cita-item"><a href="#">Historial de citas</a></li>
+               
+            </ul>
          
 
             <div class="DashBItem">
                 <div class="icons">
                     <a href=""> <i class="far fa-clipboard"></i></i></a>
                 </div>
-                <a href="">Información personal</a>
+                Información personal
             </div>
+            <ul class="submenu__infoPersonal">
+                <li class="submenu__infoPersonal-item"><a href="#">Carnet</a></li>
+                <li class="submenu__infoPersonal-item"><a href="#">Opcion2</a></li>         
+            </ul>
 
             <div class="DashBItem">
                 <div class="icons">
                     <a href=""> <i class="far fa-id-card"></i></i></a>
                 </div>
-                <a href="">Actualiza tus datos</a>
+                Actualiza tus datos
             </div>
         </div>
 
@@ -82,7 +90,18 @@
 
             <div class="ContPrincipal">
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, dcommodi consequatur eligendi ab illum omnis sint quaerat cumque, iste obcaecati rem earum doloremque? Recusandae possimus, harum distinctio omnis minus quod id quos accusamus magni voluptatem laudantium provident! Nesciunt quam reiciendis quae reprehenderit. Dicta sapiente cupiditate cto aliquid non? Non, iusto, laborum deserunt et voluptates expedita hic necessitatibus quasi perspiciatis architecto autem id, consequatur enim quaerat quisquam totam eligendi labore rerum vel eveniet officiis aspernatur blanditiis. Facilis praesentium repellendus atque recusandae labore hic harum obcaecati quidem excepturi ea. Quasi expedita veritatis laborum mollitia consequuntur perspiciatis sapiente, temporibus, similique deleniti, aliquid exercitationem libero quibusdam harum repellat consequatur. Perferendis, ut laudantium. Itaque ratione, aperiam animi dignissimos aliquid praesentium aut, corrupti, molestias totam quos repudiandae soluta dolorum. Ipsum reprehenderit at impedit et a aut facere dignissimos, culpa, excepturi autem, magnam iste! Asperiores vitae harum nesciunt amet atque blanditiis explicabo ea delectus sunt doloribus.}
+                    Salud Total EPS-S le brinda una cordial bienvenida a Oficina Virtual, una herramienta de fácil acceso con la que podrá
+                    realizar con toda seguridad
+                    y tranquilidad desde su casa o lugar de trabajo, los siguientes trámites:
+                </p>    
+                <br>                
+                <ul>
+                    <li>Actualización de datos del cotizantes y del grupo familiar.</li>
+                    <li>Consultar las unidades de atención médica y odontológica asignadas.</li>
+
+                </ul>
+
+      
                 </p>
             </div>
 
@@ -114,6 +133,9 @@
         </div>
        
         
-    </div>    
+    </div>   
+    
+    
+    <script src="js/paciente.js"></script>
 </body>
 </html>
