@@ -1,0 +1,126 @@
+/* === Import === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/** Variables CSS */
+:root {
+    --font-page:  "Roboto";
+    
+    /* colores */
+    --color-secundario: #5ec4fe;
+    --color-terciario: #505050;
+}
+
+/** Globales */
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body {
+    font-size: 16px;
+    font-family: var(--font-page);
+}
+img {
+    max-width: 100%;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.2rem;
+}
+a {
+    text-decoration: none;
+}
+input {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+input:last-of-type {
+    margin-bottom: 0;
+}
+input[type="submit"] {
+    border-radius: .5rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/** Container */
+.container {
+    width: 95%;
+    margin: 7rem auto 0 auto;
+}
+
+/* title */
+.title {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.img-logo {
+    width: 100%;
+}
+.logo {
+    object-fit: cover;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-text__text-login {
+    margin: 2rem 0;
+    color: var(--color-secundario);
+    font-weight: 700;
+}
+.header-text__welcome {
+    color: var(--color-terciario);
+    font-weight: 400;
+    font-family: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+/** === Form === **/
+.form-login {
+    width: 100%;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.input {
+    border-bottom: .2rem solid var(--color-secundario);
+}
+/* .form__id {
+    
+} */
+/* .form__password {
+
+} */
+.form__forget-password {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 5rem;
+}
+.text-forget-password {
+    font-size: 1.8rem;
+}
