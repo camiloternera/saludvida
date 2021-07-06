@@ -77,13 +77,17 @@ body {
 }
 
 .submenu__infoPersonal,
-.submenu__citas{
+.submenu__citas,
+.submenu__ConsulPacientes,
+.submenu__ConsulCitas{
   list-style: none;
   display: none;
 }
 
 .submenu__infoPersonal-item,
-.submenu__cita-item{
+.submenu__cita-item,
+.submenu__ConsulPacientes-item,
+.submenu__ConsulCitas-item{
   display: flex;
   align-items: center;
   font-size: 1.6rem;
@@ -104,7 +108,9 @@ body {
 
 }
 .submenu__infoPersonal-item a,
-.submenu__cita-item a{
+.submenu__cita-item a,
+.submenu__ConsulPacientes-item a,
+.submenu__ConsulCitas-item a{
 color: black;
 }
 
