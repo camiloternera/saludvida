@@ -1,4 +1,8 @@
-<?php require "includes/config/database.php";  ?>
+<?php require "includes/config/database.php";
+
+    conectarDB();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
