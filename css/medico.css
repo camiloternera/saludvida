@@ -78,16 +78,16 @@ body {
 
 .submenu__infoPersonal,
 .submenu__citas,
-.submenu__Datos,
-.submenu__Covid{
+.submenu__ConsulPacientes,
+.submenu__ConsulCitas{
   list-style: none;
   display: none;
 }
 
 .submenu__infoPersonal-item,
 .submenu__cita-item,
-.submenu__Covid-item,
-.submenu__Datos-item{
+.submenu__ConsulPacientes-item,
+.submenu__ConsulCitas-item{
   display: flex;
   align-items: center;
   font-size: 1.6rem;
@@ -105,21 +105,20 @@ body {
 
 .submenu__cita-item:hover{
   background: rgb(214, 214, 214);
-
 }
-.submenu__Covid-item:hover{
-  background: rgb(214, 214, 214);
-}
-.submenu__Datos-item:hover{
+.submenu__ConsulCitas-item:hover{
   background: rgb(214, 214, 214);
 }
 .submenu__infoPersonal-item:hover{
   background: rgb(214, 214, 214);
 }
+.submenu__ConsulPacientes-item:hover{
+  background: rgb(214, 214, 214);
+}
 .submenu__infoPersonal-item a,
 .submenu__cita-item a,
-.submenu__Covid-item a,
-.submenu__Datos-item a{
+.submenu__ConsulPacientes-item a,
+.submenu__ConsulCitas-item a{
 color: black;
 }
 
@@ -252,15 +251,16 @@ color: black;
 .divBtnCerrar a{
   color: var(--color-secundario);
 }
+
+
 .ContPersonAside{
   height: 87.5%;
   display: flex;
   align-items: center;
   right: -100px;
-  transition: 0.5s;
 }
-
-.ContPersonAside_btn{
+.divBtnPerson{
+  transition: 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,14 +276,10 @@ color: black;
 .checkBtn{
   cursor: pointer;
 }
-.checkBtn:checked~.ContPersonAside{
-  margin-left: 32%;
-}
-.ContPersonAside_info{
-  
-  font-size: 2rem;
+.divPersonInfo{
+  font-size: 1rem;
   transition: 0.5s;
-  width: 30rem;
+  width: 9rem;
   height: 50rem;
   background: var(--color-secundario);
   border-top-left-radius: 1rem;
@@ -292,7 +288,7 @@ color: black;
 #btnMenu{
   display: none;
 }
-#btnMenu:checked ~ .ContPersonAside_info{
+#btnMenu:checked ~ .divPersonInfo{
   transform: translateX(50px);
   background: var(--color-c);
 }

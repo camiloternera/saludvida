@@ -5,17 +5,18 @@
 //Contenedor de cada item del menu
 const intemsSubMPaciente = Array.from(document.querySelectorAll(".DashBItem"));
 //Contenedores de los submenus 
-const subMCovid = document.querySelector(".submenu__Covid");
 const subMCitas = document.querySelector(".submenu__citas");
 const subMInfoPersonal = document.querySelector(".submenu__infoPersonal");
-const subDatos = document.querySelector(".submenu__Datos");
+
+const subMConCitas = document.querySelector(".submenu__ConsulCitas");
+const subMConPacientes = document.querySelector(".submenu__ConsulPacientes");
+
 //array usada para verificar si se ha clickeado, cada submenu tiene un index en el array
 var clicked = [4];
 //Array para almacenar los menús por clase
-var SubMenus = [subMCovid,subMCitas,subMInfoPersonal,subDatos];
+var SubMenus = [subMConCitas,subMCitas,subMInfoPersonal,subMConPacientes];
 //Array para almacenar identificador de menús
-var SubMenusIdentificador = [1,2,3,4]
-
+var SubMenusIdentificador = [3,1,2,4]
 //Recorre los items del menu 
 intemsSubMPaciente.forEach(element => {
     //se acciona cuando se hace click en alguna opción del menú
@@ -33,14 +34,6 @@ intemsSubMPaciente.forEach(element => {
                 }
                 break;
             case 1: //si se selecciona la opción de citas
-<<<<<<< HEAD
-                resetMenu(subMInfoPersonal, 2)
-                selectOption(subMCitas, 1); 
-                break;
-            case 2: //si se selecciona la opcion de información personal
-                resetMenu(subMCitas, 1)
-                selectOption(subMInfoPersonal, 2);
-=======
                 selectOption(SubMenus[1], SubMenusIdentificador[1]);
                 for (let i = 0; i < SubMenus.length; i++) {
                     if(i!=1){
@@ -63,8 +56,8 @@ intemsSubMPaciente.forEach(element => {
                         resetMenu(SubMenus[i],SubMenusIdentificador[i])
                     } 
                 }
->>>>>>> dashboardMedico
                 break;
+                
         }        
     })
 }); 
@@ -86,17 +79,11 @@ const selectOption = (elemento, num) => {
     }
     
 }
-<<<<<<< HEAD
-
-
-const resetMenu = (elemento, num) => {
-    elemento.style.display = "none";
-=======
 const resetMenu = (elemento, num) =>{
     elemento.style.display= "none";
->>>>>>> dashboardMedico
     clicked[num] = false;
 }
+
     
 
 
