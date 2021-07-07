@@ -18,9 +18,11 @@ intemsSubMPaciente.forEach(element => {
         //el switch detecta cual de las opciones del menu ha sido seleccionado
         switch (intemsSubMPaciente.indexOf(element)) {
             case 1: //si se selecciona la opción de citas
+                resetMenu(subMInfoPersonal, 2)
                 selectOption(subMCitas, 1); 
                 break;
             case 2: //si se selecciona la opcion de información personal
+                resetMenu(subMCitas, 1)
                 selectOption(subMInfoPersonal, 2);
                 break;
         }        
@@ -43,6 +45,12 @@ const selectOption = (elemento, num) => {
         clicked[num] = false;
     }
     
+}
+
+
+const resetMenu = (elemento, num) => {
+    elemento.style.display = "none";
+    clicked[num] = false;
 }
     
 
