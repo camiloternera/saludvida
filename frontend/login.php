@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(isset($_SESSION['user'])){
+        if($_SESSION['rol'] == 3)       
+            header("location:paciente.php");   
+        else if($_SESSION['rol'] == 2)
+            header("location:medico.php"); 
+    }  
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +20,6 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-    <?php
-        session_start();
-        if(isset($_SESSION['user'])){
-            if($_SESSION['rol'] == 3)       
-                header("location:paciente.php");   
-            else if($_SESSION['rol'] == 2)
-                header("location:medico.php"); 
-        }  
-    ?>
-
     <div class="container">
 
         <div class="title">
