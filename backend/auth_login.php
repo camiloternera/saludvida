@@ -7,7 +7,7 @@
         require_once('includes/config/database.php');
         $db = conectarDB();
         
-        $query = "SELECT * FROM usuarios WHERE identificacion = '$cedula' and password_user = '$password'" ;
+        $query = "SELECT * FROM usuarios WHERE cedula_usuario = '$cedula' and password_user = '$password'" ;
         $resolve = mysqli_query($db , $query);
         $rows = mysqli_num_rows($resolve);
         if($rows > 0){
