@@ -7,7 +7,7 @@
     <title>Vidad - Salud</title>
     <!-- CSS && Normalize -->
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/auth_login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
     <?php
@@ -19,7 +19,6 @@
                 header("location:medico.php"); 
         }  
     ?>
-
 
     <div class="container">
 
