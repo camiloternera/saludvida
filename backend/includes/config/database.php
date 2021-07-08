@@ -7,10 +7,10 @@
         $database = "saludvida";
 
         $db = mysqli_connect($host, $user, $password, $database);
-        if ($db) {
-            echo "Connect succefully";
-        } else {
-            echo "Danger! not conection";
+        
+        if (!$db) {
+            echo "Error no se pudo conectar";
+            exit;
         }
 
         return $db;

@@ -1,0 +1,47 @@
+/* === Import === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/** Variables CSS */
+:root {
+    --font-page:  "Roboto";
+    
+    /* colores */
+    --color-secundario: #5ec4fe;
+    --color-terciario: #505050;
+}
+
+/** Globales */
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+body {
+    font-size: 16px;
+    font-family: var(--font-page);
+}
+img {
+    max-width: 100%;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+    font-size: 3.8rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.2rem;
+}
+a {
+    text-decoration: none;
+}

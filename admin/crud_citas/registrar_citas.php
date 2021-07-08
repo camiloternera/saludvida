@@ -1,3 +1,9 @@
+<?php require "../../backend/includes/config/database.php";
+
+    $db = conectarDB();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +13,8 @@
     <title>Administracion</title>
 </head>
 <body>
-    
+    <form class="formulario">
+        <label for=""></label>
+    </form>
 </body>
 </html>
