@@ -14,8 +14,8 @@
 </head>
 <body>
     <?php
-        include_once("backend/includes/checkSesion.php");
-        include_once("backend/includes/permiso_paciente.php");
+        include_once("../backend/includes/checkSesion.php");
+        //include_once("../backend/includes/permiso_paciente.php");
     ?>
     <!-- dashboard -->
     <div class="ContainerDashB">
@@ -114,7 +114,7 @@
         <div class="ContRight">
             <div class="Cerrarbtn">
                 <div class="divBtnCerrar">
-                    <a href="backend/cerrar_sesion.php">Cerrar sesión</a>
+                    <a href="../backend/cerrar_sesion.php">Cerrar sesión</a>
                 </div>
             </div>
             
