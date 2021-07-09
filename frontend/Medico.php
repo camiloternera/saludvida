@@ -31,7 +31,7 @@
         <div class="DashContent">
             
             <div class="DashLogo">
-                <a href="#">
+                <a href="/frontend/index.php">
                     <i class="color-logo fas fa-plus"></i>
                     <span id="colorA">Salud</span><span id="colorC">Vida</span>
                 </a>

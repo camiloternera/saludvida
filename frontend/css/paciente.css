@@ -7,7 +7,7 @@
     --color-d:white;
     --color-e:#f6f6f6;
     --color-f:rgb(80,80,80);
-  }
+}
   
 .color-logo {
   color: var(--color-logo);

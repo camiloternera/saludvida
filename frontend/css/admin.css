@@ -3,11 +3,15 @@
 
 /** Variables CSS */
 :root {
+    /* Fuente */
     --font-page:  "Roboto";
-    
+
     /* colores */
+    --color-primario: rgb(36,146,225);
     --color-secundario: #5ec4fe;
     --color-terciario: #505050;
+    --white: #ffffff;
+    --color-salud: rgb(80,80,80);
 }
 
 /** Globales */
@@ -30,7 +34,8 @@ img {
 h1,
 h2,
 h3,
-p {
+p,
+ul {
   margin: 0;
 }
 h1 {
@@ -44,4 +49,62 @@ h3 {
 }
 a {
     text-decoration: none;
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/** Utilidades */
+.margin-center {
+    margin: 0 auto;
+}
+
+/** === Header - Site === **/
+.site-header {
+    background-color: var(--color-primario);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.logo {
+    font-size: 5rem;
+    display: flex;
+}
+.logo__text {
+    font-weight: 700;
+}
+.logo__color {
+    color: var(--white);
+}
+.color-salud {
+    color: var(--color-salud);
+}
+.color-vida {
+    color: var(--white);
+}
+.admin {
+    display: flex;
+    align-items: center;
+}
+.admin__title {
+    color: var(--color-salud);
+}
+
+/** === Menu - Navegation === **/
+.menu-navegation {
+    position: fixed;
+    height: 100vh;
+    background-color: var(--color-primario);
+}
+ul > .items {
+    background-color: var(--color-secundario);
+    padding: 1rem;
+    padding-right: 0;
+    font-size: 2rem;
+}
+ul > .sub-item {
+    padding: 1rem 0 1rem 2rem;
+    /* display: none; */
 }

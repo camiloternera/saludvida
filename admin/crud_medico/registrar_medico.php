@@ -1,8 +1,25 @@
-<?php require "../../backend/includes/config/database.php";
+<?php 
+
+    require "../../backend/includes/config/database.php";
+    require "../../backend/functions/registrar_medico.php";
+
     $db = conectarDB();
+    
     
     //Arreglo de errores
     $errores = [];
+
+    // Cargue con los datos ya ingresado y que no vuelva a escribir lo mismo.
+    $cedula = "";
+    $name = "";
+    $lastname = "";
+    $ages = "";
+    $address = "";
+    $cellphone = "";
+    $email = "";
+    $sex = "";
+    $specialty = "";
+    $collegiate = "";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -61,9 +78,12 @@
         */
         if (empty($errores)) {
             // Insertar datos a la base de datos
-            $query = " INSERT INTO medicos(cedula_medico, nombre, apellido, edad, direccion, telefono, correo, sexo, especialidad, n_colegiado) 
-            VALUES ('$cedula', '$name', '$lastname', '$ages', '$address', '$cellphone', '$email', '$sex', '$specialty', '$collegiate')";
+            $INSERT = registrarMedico($cedula, $name, $lastname, $ages, $address, $cellphone, $email, $sex, $specialty, $collegiate);
             // echo $query;
+
+            // echo "<pre>";
+            // var_dump($INSERT);
+            // echo "</pre>";  
 
             $result = mysqli_query($db, $query);
 
@@ -86,7 +106,7 @@
     <link rel="stylesheet" href="../../frontend/css/admin.css">
     <link rel="stylesheet" href="../../frontend/css/normalize.css">
 </head>
-<body>
+<body> 
     <?php foreach($errores as $error): ?>
     <div class="alert error">
         <?php echo $error; ?>
@@ -96,43 +116,43 @@
     <form class="formulario" method="POST" action="/admin/crud_medico/registrar_medico.php">
         <div>
             <label for="cedula">Cedula</label>
-            <input type="text" name="cedula" id="cedula">
+            <input type="text" name="cedula" id="cedula" value="<?php echo $cedula; ?>">
         </div>
         <div>
             <label for="name">Nombre</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" value="<?php echo $name; ?>">
         </div>
         <div>
             <label for="lastname">Apellidos</label>
-            <input type="text" name="lastname" id="lastname">
+            <input type="text" name="lastname" id="lastname" value="<?php echo $lastname; ?>">
         </div>
         <div>
             <label for="ages">Edad</label>
-            <input type="number" name="ages" id="ages">
+            <input type="number" name="ages" id="ages" value="<?php echo $ages; ?>">
         </div>
         <div>
             <label for="address">Direccion</label>
-            <input type="text" name="address" id="address">
+            <input type="text" name="address" id="address" value="<?php echo $address; ?>">
         </div>
         <div>
             <label for="cellphone">Numero de celular</label>
-            <input type="number" name="cellphone" id="cellphone">
+            <input type="number" name="cellphone" id="cellphone" value="<?php echo $cellphone; ?>">
         </div>
         <div>
             <label for="email">Correo</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" value="<?php echo $email; ?>">
         </div>
         <div>
             <label for="sex">Sexo</label>
-            <input type="text" name="sex" id="sex">
+            <input type="text" name="sex" id="sex" value="<?php echo $sex; ?>">
         </div>
         <div>
             <label for="specialty">Especialista</label>
-            <input type="text" name="specialty" id="specialty">
+            <input type="text" name="specialty" id="specialty" value="<?php echo $specialty; ?>">
         </div>
         <div>
             <label for="collegiate">Numero de colegiado</label>
-            <input type="text" name="collegiate" id="collegiate">
+            <input type="text" name="collegiate" id="collegiate" value="<?php echo $collegiate; ?>">
         </div>
         <div>
             <input type="submit" value="Enviar">
