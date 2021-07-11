@@ -94,24 +94,19 @@
     }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administracion</title>
-    <!-- CSS & Normalize -->
-    <link rel="stylesheet" href="../../frontend/css/admin.css">
-    <link rel="stylesheet" href="../../frontend/css/normalize.css">
-</head>
-<body> 
-    <?php foreach($errores as $error): ?>
-    <div class="alert error">
-        <?php echo $error; ?>
-    </div>
-    <?php endforeach; ?>
+    
+    <?php
+        /**  Recorro los errores que tiene la variable 
+        *    En dado caso que tenga algun error */
+        foreach($errores as $error): 
+    ?>
+        <div class="alert error">
+            <?php echo $error; ?>
+        </div>
+    <?php 
+        // Finalizo en foreach() 
+        endforeach; 
+    ?>
 
     <form class="formulario" method="POST" action="/admin/crud_medico/registrar_medico.php">
         <div>
@@ -159,5 +154,3 @@
         </div>
     </form>
     <a href="../index.php">Regresar</a>
-</body>
-</html>

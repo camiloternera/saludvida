@@ -96,6 +96,7 @@ ul {
 .menu-navegation {
     position: fixed;
     height: 100vh;
+    width: 25rem;
     background-color: var(--color-primario);
 }
 ul > .items {
@@ -107,4 +108,53 @@ ul > .items {
 ul > .sub-item {
     padding: 1rem 0 1rem 2rem;
     /* display: none; */
+}
+
+/** === Cuerpo - main === **/
+.wrapper {
+    width: calc(100% - 25rem);
+    position: relative;
+    margin-left: auto;
+}
+
+/** === Modal === **/
+.modal {
+    /* display: flex; */
+    background-color: rgba(0, 0, 0, .4);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: transform 1s;
+    transform: translateY(0%);
+    display: none;
+}
+.modal__container {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    position: relative;
+}
+.modal__close {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: -10;
+    left: -10;
+    right: -10;
+}
+.close {
+    background-color: red;
+    border: none;
+    padding: .5rem .8rem;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 50%;
+    cursor: pointer;
 }
