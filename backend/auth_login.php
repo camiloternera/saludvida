@@ -19,7 +19,7 @@
             if($user['id_rol'] == 3)       
                  header("location:../paciente.php");   
             else if($user['id_rol'] == 2)
-                   header("location:../medico.php");            
+                   header("location:../medicos.php");            
         }
         else header("location:../login.php"); 
 

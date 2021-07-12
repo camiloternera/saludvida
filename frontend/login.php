@@ -4,7 +4,7 @@
         if($_SESSION['rol'] == 3)       
             header("location:paciente.php");   
         else if($_SESSION['rol'] == 2)
-            header("location:medico.php"); 
+            header("location:medicos.php"); 
     }  
 ?>
 

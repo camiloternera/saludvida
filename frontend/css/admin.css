@@ -12,6 +12,11 @@
     --color-terciario: #505050;
     --white: #ffffff;
     --color-salud: rgb(80,80,80);
+    --buttonAdd: #28A745;
+    /* background-color: rgb(179,241,117); */
+    /* color: green; */
+    /* background-color: rgb(238,148,166); */
+    /* color: rgb(163,0,33); */
 }
 
 /** Globales */
@@ -55,10 +60,43 @@ ul {
     list-style: none;
     padding: 0;
 }
+table {
+    font-size: 2rem;
+    text-align: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    white-space: nowrap;
+}
+tr:hover > td{
+    background-color: var(--buttonAdd);
+    cursor: pointer;
+    color: var(--white);
+}
+tr:nth-child(even) {
+    background-color: gray;
+    color: var(--white);
+}
+th,
+td {
+    border: solid .2rem #dee2e6;
+    padding: 1rem;
+}
+th {
+    text-transform: uppercase;
+}
+td {
+    transition: all .3s;
+}
 
 /** Utilidades */
 .margin-center {
     margin: 0 auto;
+}
+.text-add {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
 }
 
 /** === Header - Site === **/
@@ -115,6 +153,25 @@ ul > .sub-item {
     width: calc(100% - 25rem);
     position: relative;
     margin-left: auto;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+.btnAdd {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+.button {
+    background-color: var(--buttonAdd);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.table {
+    width: 100%;
+    overflow: scroll;
 }
 
 /** === Modal === **/
@@ -144,9 +201,9 @@ ul > .sub-item {
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    top: -10;
-    left: -10;
-    right: -10;
+    top: -1rem;
+    left: -1rem;
+    right: -1rem;
 }
 .close {
     background-color: red;

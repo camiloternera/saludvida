@@ -16,7 +16,7 @@
 <body>
     <?php
         include_once("../backend/includes/checkSesion.php");
-        include_once("backend/includes/permiso_medico.php");
+        include_once("backend/includes/permiso_medicos.php");
     ?>
 
     <!-- dashboard -->

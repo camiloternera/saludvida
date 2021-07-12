@@ -53,7 +53,7 @@
                 <a class="item" href="">Medicos</a>
                 <ul>
                     <li class="sub-item">
-                        <a href="crud_medico/registrar_medico.php">Listas de medicos</a>
+                        <a href="crud_medico/medicos.php">Listas de medicos</a>
                     </li>
                     <!-- /.sub-item -->
                 </ul>
@@ -92,7 +92,7 @@
             <!-- /.items -->
         </ul>
         <a href="crud_citas/registrar_citas.php">Registrar citas</a>
-        <a href="crud_medico/registrar_medico.php">Registrar medicos</a>
+        <a href="#/registrar_medico">Registrar medicos</a>
         <a href=""></a>
         <a href=""></a>
     </nav>
@@ -103,8 +103,6 @@
     </main>
 
     <!-- Importamos los archivos .js de tipo module para import/export entre archivos  -->
-    <script src="../frontend/js/controllers/medico.admin.js" type="module"></script>
-    <script src="../frontend/js/routes/admin.routes.js" type="module"></script>
     <script src="../frontend/js/admin_index.js" type="module"></script>
 </body>
 </html>
