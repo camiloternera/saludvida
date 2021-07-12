@@ -17,9 +17,9 @@
             $_SESSION['rol'] = $user['id_rol'];
 
             if($user['id_rol'] == 3)       
-                 header("location:../paciente.php");   
+                 header("location:../frontend/paciente.php");   
             else if($user['id_rol'] == 2)
-                   header("location:../medicos.php");            
+                   header("location:../frontend/medico.php");            
         }
         else header("location:../login.php"); 
 

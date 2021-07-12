@@ -7,8 +7,8 @@
     $db = conectarDB();
 
     // Listar (Consultar) medico;
-    $SQL_SELECT = consultarMedicos();
-    $resultSelect = mysqli_query($db, $SQL_SELECT);
+    // $SQL_SELECT = consultarMedicos();
+    // $resultSelect = mysqli_query($db, $SQL_SELECT);
 
     //Arreglo de errores
     $errores = [];
