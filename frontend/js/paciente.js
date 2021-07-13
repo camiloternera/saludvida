@@ -33,12 +33,28 @@ intemsSubMPaciente.forEach(element => {
                 }
                 break;
             case 1: //si se selecciona la opción de citas
-                resetMenu(subMInfoPersonal, 2)
-                selectOption(subMCitas, 1); 
+                 selectOption(SubMenus[1], SubMenusIdentificador[1]);
+                 for (let i = 0; i < SubMenus.length; i++) {
+                     if(i!=1){ 
+                         resetMenu(SubMenus[i],SubMenusIdentificador[i])
+                     } 
+                 }
                 break;
             case 2: //si se selecciona la opcion de información personal
-                resetMenu(subMCitas, 1)
-                selectOption(subMInfoPersonal, 2);
+                selectOption(SubMenus[2], SubMenusIdentificador[2]);
+                for (let i = 0; i < SubMenus.length; i++) {
+                    if(i!=2){ 
+                        resetMenu(SubMenus[i],SubMenusIdentificador[i])
+                    } 
+                }
+                break;
+            case 3:
+                selectOption(SubMenus[3], SubMenusIdentificador[3]);
+                for (let i = 0; i < SubMenus.length; i++) {
+                    if(i!=3){
+                        resetMenu(SubMenus[i],SubMenusIdentificador[i])
+                    } 
+                }
                 break;
         }        
     })
@@ -61,10 +77,8 @@ const selectOption = (elemento, num) => {
     }
     
 }
-
-
-const resetMenu = (elemento, num) => {
-    elemento.style.display = "none";
+const resetMenu = (elemento, num) =>{
+    elemento.style.display= "none";
     clicked[num] = false;
 }
     

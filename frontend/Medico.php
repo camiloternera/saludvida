@@ -16,7 +16,7 @@
 <body>
     <?php
         include_once("../backend/includes/checkSesion.php");
-        include_once("../backend/includes/permiso_medicos.php");
+        include_once("../backend/includes/permiso_medico.php");
     ?>
 
     <!-- dashboard -->
@@ -129,7 +129,7 @@
                 </div>
             </div>
             
-            <div class="ContPersonAside">
+            <!-- <div class="ContPersonAside">
                 <div class="divBtnPerson">
                     <input type="checkbox" id="btnMenu">
 
@@ -143,7 +143,7 @@
                 </div>
                
               
-            </div>
+            </div> -->
             
         </div>
        

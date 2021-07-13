@@ -15,10 +15,10 @@
 <body>
     <?php
         include_once("../backend/includes/checkSesion.php");
-        include_once("../backend/includes/permiso_paciente.php");
+        //include_once("../backend/includes/permiso_paciente.php");
     ?>
-    <!-- dashboard -->
-    <div class="ContainerDashB">
+     <!-- dashboard -->
+     <div class="ContainerDashB">
         <!-- Parte de abajo -->
         <div class="DashFoot">
             <div class="DashFootItem">
@@ -41,6 +41,10 @@
                 </div>
                 <p>Información covid</p> 
             </div>
+            <ul class="submenu__Covid">
+                <li class="submenu__cita-item"><a href="#/vistas/paciente/Paciente1">Novedades covid</a></li>
+                <li class="submenu__cita-item"><a href="#">Vacunación</a></li>
+            </ul>
  
             <div class="DashBItem">
                 <div class="icons">
@@ -63,8 +67,7 @@
                 Información personal
             </div>
             <ul class="submenu__infoPersonal">
-                <li class="submenu__infoPersonal-item"><a href="#">Carnet</a></li>
-                <li class="submenu__infoPersonal-item"><a href="#">Opcion2</a></li>         
+                <li class="submenu__infoPersonal-item"><a href="#">Carnet</a></li>        
             </ul>
 
             <div class="DashBItem">
@@ -73,6 +76,10 @@
                 </div>
                 Actualiza tus datos
             </div>
+            <ul class="submenu__Datos">
+                <li class="submenu__cita-item"><a href="#">Subir documentos</a></li>
+                <li class="submenu__cita-item"><a href="#">Editar información</a></li>
+            </ul>
         </div>
 
     </div>
@@ -119,7 +126,7 @@
             </div>
             
             <div class="ContPersonAside">
-                <div class="divBtnPerson">
+                <!-- <div class="divBtnPerson">
                     <input type="checkbox" id="btnMenu">
 
                     <label for="btnMenu" class="checkBtn">
@@ -130,7 +137,7 @@
                 <div class="divPersonInfo" id="personInfo">
 
                 </div>
-               
+                -->
               
             </div>
             
