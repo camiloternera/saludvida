@@ -4,18 +4,10 @@ const modalAccion = document.getElementById('modalAccion');
 const close = document.querySelector('.close');
 const closeAccion = document.querySelector('.closeAccion');
 const row = document.querySelectorAll('.userSelect');
+const rowMedico = document.getElementById('rowMedico');
 // Capturar campos de textos
 const formAdd = document.querySelector('.formAdd');
-// const cedulaMedico = document.getElementById('cedula');
-// const nameMedico = document.getElementById('name');
-// const lastname = document.getElementById('lastname');
-// const ages = document.getElementById('ages');
-// const address = document.getElementById('address');
-// const cellphone = document.getElementById('cellphone');
-// const email = document.getElementById('email');
-// const sex = document.getElementById('sex');
-// const specialty = document.getElementById('specialty');
-// const collegiate = document.getElementById('collegiate');
+
 
 if (btnAddPaciente) {
     btnAddPaciente.addEventListener('click', (e) => {
@@ -50,30 +42,39 @@ if (btnAddPaciente) {
             post.append('n_colegiado', collegiate);
             post.append('registrar', accion);
             
-            if (accion === 'registrar') {
+            if (accion === 'crear') {
                 // Crearemos nuevo medico
                 ajaxInsert(post);
             }
         
         });
 
+        /** Insertando datos a la base de datos via Ajax */
         function ajaxInsert(data) {
             const xhttp = new XMLHttpRequest();
             xhttp.open('POST', 'add_medico.php', true);
-            debugger
             xhttp.onload = function () {
                 if (this.readyState === 4) {
                     if (this.status === 200 || this.status === 201) {
-                        const response = (this.responseText);
+                        const response = JSON.parse(this.responseText);
                         console.log(response);
                         // Inserta un nuevo elemento a la tabla
-                        // const newMedico = document.createElement('tr');
+                        const newMedico = document.createElement('tr');
 
-                        // newMedico.innerHTML = `
-                        //         <td>${response.datos.nombre}</td>
-                        //         <td>${response.datos.empresa}</td>
-                        //         <td>${response.datos.telefono}</td>
-                        // `;
+                        newMedico.innerHTML = `
+                                <td>${response.data.cedula_medico}</td>
+                                <td>${response.data.nombre}</td>
+                                <td>${response.data.apellido}</td>
+                                <td>${response.data.edad}</td>
+                                <td>${response.data.direccion}</td>
+                                <td>${response.data.telefono}</td>
+                                <td>${response.data.correo}</td>
+                                <td>${response.data.sexo}</td>
+                                <td>${response.data.especialidad}</td>
+                                <td>${response.data.n_colegiado}</td>
+                        `;
+                        // Agregar fila(registro) a la tabla
+                        rowMedico.appendChild(newMedico);
                     }
                 }
             };

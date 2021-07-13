@@ -1,93 +1,8 @@
 <?php
-
-    require "../../backend/includes/config/database.php";
     require "../../backend/functions/consultar_medicos.php";
-    require "add_medico.php";
-
-    $db = conectarDB();
-
-    // Listar (Consultar) medico;
-    // $SQL_SELECT = consultarMedicos();
-    // $resultSelect = mysqli_query($db, $SQL_SELECT);
-
-    //Arreglo de errores
-    $errores = [];
-
-    // Cargue con los datos ya ingresado y que no vuelva a escribir lo mismo.
-    $cedula = "";
-    $name = "";
-    $lastname = "";
-    $ages = "";
-    $address = "";
-    $cellphone = "";
-    $email = "";
-    $sex = "";
-    $specialty = "";
-    $collegiate = "";
-
-    var_dump($_SERVER['REQUEST_METHOD']);
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        var_dump($_POST);
-
-        $cedula = $_POST['cedula'];
-        $name = $_POST['name'];
-        $lastname = $_POST['lastname'];
-        $ages = $_POST['ages'];
-        $address = $_POST['address'];
-        $cellphone = $_POST['cellphone'];
-        $email = $_POST['email'];
-        $sex = $_POST['sex'];
-        $specialty = $_POST['specialty'];
-        $collegiate = $_POST['collegiate'];
-
-        //Validar formulario
-        if(!$cedula) {
-            $errores[] = "Por favor digite su cedula";
-        }
-        if(!$name) {
-            $errores[] = "Por favor digite su nombre";
-        }
-        if(!$lastname) {
-            $errores[] = "Por favor digite sus apellidos";
-        }
-        if(!$ages) {
-            $errores[] = "Por favor digite su edad";
-        }
-        if(!$address) {
-            $errores[] = "Por favor digite su direccion";
-        }
-        if(!$cellphone) {
-            $errores[] = "Por favor digite su numero de celular";
-        }
-        if(!$email) {
-            $errores[] = "Por favor digite su correo electronico";
-        }
-        if(!$sex) {
-            $errores[] = "Por favor digite su elija su sexo";
-        }
-        if(!$specialty) {
-            $errores[] = "Por favor digite su elija su especialidad";
-        }
-        if(!$collegiate) {
-            $errores[] = "Por favor digite su numero de colegiado";
-        }
-
-        // echo "<pre>";
-        // var_dump($errores);
-        // echo "</pre>";
-
-        // Revisar que el arreglo de errores este vacio dashboard
-        /** isset() = revisa que la variable este creada.
-         *  empty() = revisa que un arreglo este vacio.
-        */
-        // if (empty($errores)) {
-        //     echo addMedico($cedula, $name, $lastname, $ages, $address, $cellphone, $email, $sex, $specialty, $collegiate);
-        // }
-    }
-
+    $consulta = consultarMedicos();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,12 +120,25 @@
                         <th>Numero de colegiado</th>
                     </tr>
                 </thead>
-                <tbody class="table__body">
-                    <!-- Los datos vienen desde ajax -->
+                <tbody class="table__body" id="rowMedico">
+                    <?php while($row = mysqli_fetch_assoc($consulta)): ?>
+                        <tr>
+                            <td> <?php echo $row['cedula_medico']; ?> </td>
+                            <td> <?php echo $row['nombre']; ?> </td>
+                            <td> <?php echo $row['apellido']; ?> </td>
+                            <td> <?php echo $row['edad']; ?> </td>
+                            <td> <?php echo $row['direccion']; ?> </td>
+                            <td> <?php echo $row['telefono']; ?> </td>
+                            <td> <?php echo $row['correo']; ?> </td>
+                            <td> <?php echo $row['sexo']; ?> </td>
+                            <td> <?php echo $row['especialidad']; ?> </td>
+                            <td> <?php echo $row['n_colegiado']; ?> </td>
+                        </tr>
+                    <?php endwhile; ?>
                 </tbody>
                 <tfoot class="table__footer">
                     <tr>
-                        <th>Listado de medicos</th>
+                        <th colspan="10">Listado de medicos</th>
                     </tr>
                 </tfoot>
             </table>
@@ -221,47 +149,35 @@
                 <div class="modal__close">
                     <button class="close">X</button>
                 </div>
-                <?php
-                    /**  Recorro los errores que tiene la variable
-                    *    En dado caso que tenga algun error */
-                    foreach($errores as $error):
-                ?>
-                    <div class="alert error">
-                        <?php echo $error; ?>
-                    </div>
-                <?php
-                    // Finalizo en foreach()
-                    endforeach;
-                ?>
                 <h3 class="text-add">Agregar Medico</h3>
                 <form class="formAdd">
                     <div>
                         <label for="cedula">Cedula</label>
-                        <input type="text" name="cedula" id="cedula" value="<?php echo $cedula; ?>">
+                        <input type="text" name="cedula" id="cedula">
                     </div>
                     <div>
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" value="<?php echo $name; ?>">
+                        <input type="text" name="name" id="name">
                     </div>
                     <div>
                         <label for="lastname">Apellidos</label>
-                        <input type="text" name="lastname" id="lastname" value="<?php echo $lastname; ?>">
+                        <input type="text" name="lastname" id="lastname">
                     </div>
                     <div>
                         <label for="ages">Edad</label>
-                        <input type="number" name="ages" id="ages" value="<?php echo $ages; ?>">
+                        <input type="number" name="ages" id="ages">
                     </div>
                     <div>
                         <label for="address">Direccion</label>
-                        <input type="text" name="address" id="address" value="<?php echo $address; ?>">
+                        <input type="text" name="address" id="address">
                     </div>
                     <div>
                         <label for="cellphone">Numero de celular</label>
-                        <input type="number" name="cellphone" id="cellphone" value="<?php echo $cellphone; ?>">
+                        <input type="number" name="cellphone" id="cellphone">
                     </div>
                     <div>
                         <label for="email">Correo</label>
-                        <input type="email" name="email" id="email" value="<?php echo $email; ?>">
+                        <input type="email" name="email" id="email">
                     </div>
                     <div>
                         <label for="sex">Sexo</label>
@@ -273,14 +189,14 @@
                     </div>
                     <div>
                         <label for="specialty">Especialista</label>
-                        <input type="text" name="specialty" id="specialty" value="<?php echo $specialty; ?>">
+                        <input type="text" name="specialty" id="specialty">
                     </div>
                     <div>
                         <label for="collegiate">Numero de colegiado</label>
-                        <input type="text" name="collegiate" id="collegiate" value="<?php echo $collegiate; ?>">
+                        <input type="text" name="collegiate" id="collegiate">
                     </div>
                     <div>
-                        <input type="hidden" name="registrar" id="registrar" value="registrar">
+                        <input type="hidden" name="registrar" id="registrar" value="crear">
                         <input type="submit" value="Registrar">
                     </div>
                 </form>
@@ -297,31 +213,31 @@
                     <form class="formulario" method="POST" action="medicos.php">
                             <div>
                                 <label for="cedula">Cedula</label>
-                                <input type="text" name="cedula" id="cedula" value="<?php echo $cedula ?>">
+                                <input type="text" name="cedula" id="cedula">
                             </div>
                             <div>
                                 <label for="name">Nombre</label>
-                                <input type="text" name="name" id="name" value="<?php echo $name; ?>">
+                                <input type="text" name="name" id="name">
                             </div>
                             <div>
                                 <label for="lastname">Apellidos</label>
-                                <input type="text" name="lastname" id="lastname" value="<?php echo $lastname; ?>">
+                                <input type="text" name="lastname" id="lastname">
                             </div>
                             <div>
                                 <label for="ages">Edad</label>
-                                <input type="number" name="ages" id="ages" value="<?php echo $ages; ?>">
+                                <input type="number" name="ages" id="ages">
                             </div>
                             <div>
                                 <label for="address">Direccion</label>
-                                <input type="text" name="address" id="address" value="<?php echo $address; ?>">
+                                <input type="text" name="address" id="address">
                             </div>
                             <div>
                                 <label for="cellphone">Numero de celular</label>
-                                <input type="number" name="cellphone" id="cellphone" value="<?php echo $cellphone; ?>">
+                                <input type="number" name="cellphone" id="cellphone">
                             </div>
                             <div>
                                 <label for="email">Correo</label>
-                                <input type="email" name="email" id="email" value="<?php echo $email; ?>">
+                                <input type="email" name="email" id="email">
                             </div>
                             <div>
                                 <label for="sex">Sexo</label>
@@ -334,11 +250,11 @@
                             </div>
                             <div>
                                 <label for="specialty">Especialista</label>
-                                <input type="text" name="specialty" id="specialty" value="<?php echo $specialty; ?>">
+                                <input type="text" name="specialty" id="specialty">
                             </div>
                             <div>
                                 <label for="collegiate">Numero de colegiado</label>
-                                <input type="text" name="collegiate" id="collegiate" value="<?php echo $collegiate; ?>">
+                                <input type="text" name="collegiate" id="collegiate">
                             </div>
                         <div>
                             <input type="submit" value="Modificar">
