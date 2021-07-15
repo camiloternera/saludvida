@@ -7,16 +7,19 @@
     --font-page:  "Roboto";
 
     /* colores */
-    --color-primario: rgb(36,146,225);
-    --color-secundario: #5ec4fe;
+    --color-primario: rgb(64, 175, 255);
+    --color-secundario: rgb(55, 170, 252) ;
     --color-terciario: #505050;
     --white: #ffffff;
-    --color-salud: rgb(80,80,80);
-    --buttonAdd: #28A745;
+    --color-salud: rgb(133, 132, 132);
+    --buttonAdd: rgb(22, 152, 245);
     /* background-color: rgb(179,241,117); */
     /* color: green; */
     /* background-color: rgb(238,148,166); */
     /* color: rgb(163,0,33); */
+    --color-blue1: rgb(22, 152, 245);
+    --color-blue2:rgb(0, 174, 255);
+    /* --colorDashboard:rgb(45, 160, 255); */
 }
 
 /** Globales */
@@ -101,60 +104,140 @@ td {
 
 /** === Header - Site === **/
 .site-header {
-    background-color: var(--color-primario);
+    background-color: var(--colorDashboard);
     display: flex;
-    justify-content: space-between;
-    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem; 
+    height: 10rem;
+    /* border: solid 1px #3db8ff; */
+}
+.cent-header{
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem; 
+    height: 10rem;
+    /* border-bottom: solid 1px #3db8ff; */
+}
+/* .admin__title{
+ 
+    font-size: 3rem; 
+} */
+
+.logo__text-Cent{
+    color:#3db8ff;
+    font-weight: 600;
+    /* border: solid 1px #3db8ff; */
+    /* padding: 2rem; */
+}
+.logo__text-site{
+    font-weight: 600;
+}
+.logo__text-site i{
+    color: var(--white);
 }
 .logo {
-    font-size: 5rem;
+    /* font-size: 5rem; */
     display: flex;
+    flex-direction: column;
 }
 .logo__text {
     font-weight: 700;
 }
-.logo__color {
+.color-vida{
     color: var(--white);
 }
-.color-salud {
-    color: var(--color-salud);
-}
-.color-vida {
+.color-salud{
     color: var(--white);
 }
-.admin {
+/* .admin {
+    /* display: flex; */
+    /* align-items: center; 
+} */
+
+
+/* main */
+.MainContainer{
+    /* border: solid 1px red; */
+    width: 100vw;
+    height: 100vh;
+    padding-left: 28.8rem;
+  
+    /* padding: 0 3rem; */
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
-.admin__title {
-    color: var(--color-salud);
+.table{
+    background: white;
 }
 
 /** === Menu - Navegation === **/
 .menu-navegation {
     position: fixed;
     height: 100vh;
-    width: 25rem;
-    background-color: var(--color-primario);
+    width: 29rem;
+    /* background-color: var(--colorDashboard); */
+    transition: 0;
+    background: linear-gradient(to top, #137cf3, rgb(0, 174, 255));
+
 }
 ul > .items {
-    background-color: var(--color-secundario);
-    padding: 1rem;
-    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    background-color: var(--colorDashboard);
+    /* padding: 1.5rem 0rem; */
+    /* padding-right: 0; */
     font-size: 2rem;
+    border-bottom: solid .2rem var(--color-secundario);
+    color: white;
+    transition: 0.3s;
+    height: 100%;
+    
+}
+ul > .items a{
+    padding: 1.5rem 2rem;
+    text-decoration: none;
+    color: white; 
+}
+.items > a{
+    display: flex;
+    justify-content: space-between;
+}
+.items:hover {
+    background-color: rgba(0, 0, 0, .05);
 }
 ul > .sub-item {
-    padding: 1rem 0 1rem 2rem;
+    color: #ffffff;
+    padding: 1rem;
+    padding-left: 2rem;
+    font-size: 2rem;
     /* display: none; */
+    /* background: white; */
+    width: 100%;
+    transition: 0.2s;
+}
+ul > .sub-item:hover {
+    padding-left: 0.5rem;
+    border-right: solid .8rem white;
+    /* border-bottom: solid 1px white; */
+}
+ul > .sub-item a{
+    color: white;
 }
 
 /** === Cuerpo - main === **/
 .wrapper {
     width: calc(100% - 25rem);
-    position: relative;
-    margin-left: auto;
+    height: 100%;
+    /* margin-left: 25rem; */
+    /* background: #; */
+    width: 100%;
+    /* border: solid 1px red; */
     padding: 2rem;
-    margin-top: 5rem;
+    background: rgba(251, 251, 251, 0.856);
 }
 .btnAdd {
     display: flex;
@@ -171,7 +254,8 @@ ul > .sub-item {
 }
 .table {
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
+    /* border: solid 3px #3db8ff; */
 }
 
 /** === Modal === **/
@@ -191,27 +275,106 @@ ul > .sub-item {
     transform: translateY(0%);
     display: none;
 }
-.modal__container {
-    background-color: var(--white);
+.modal__container{
     padding: 2rem;
     border-radius: 1.5rem;
     position: relative;
+    background: var(--white);
+    width: 70%;
+    height: 75%;
+    padding: 1rem;
 }
-.modal__close {
+.modal__close{
     display: flex;
     justify-content: flex-end;
     position: absolute;
     top: -1rem;
     left: -1rem;
     right: -1rem;
+
+    margin: 1rem;
+    background: var(--color-secundario);
+    display: flex;
 }
 .close {
-    background-color: red;
+    color: var(--white);
+    background: var(--color-secundario);
     border: none;
-    padding: .5rem .8rem;
+    padding: .3em 1rem;
     color: var(--white);
     font-size: 2rem;
     font-weight: 700;
-    border-radius: 50%;
+    /* border-radius: 100%; */
     cursor: pointer;
+    transition: 0.2s;
+    height: 5rem;
+    width: 4rem;
+}
+.close:hover {
+    background: rgb(235, 46, 46);
+}
+
+/* formulario */
+.formAdd{
+    overflow: auto;
+    /* border: solid 1px red; */
+    width: 100%;
+    height: 93%;
+    display: grid;
+    
+    grid-template-columns: 100%;
+}
+.formAdd-item{
+    width: 100%;
+    /* border: solid 1px rgb(33, 44, 141); */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 2rem;
+    font-size: 2rem;
+    color: #505050;
+}
+.formAdd-item label{
+    margin-bottom: .5rem;
+}
+.formAdd-item input{
+    height: 4rem;
+    color: #5a5a5a;
+    /* max-width: 50rem; */
+    border: solid .1rem rgb(192, 192, 192);
+}
+.formAdd-item select{
+    height: 4rem;
+    color: #5a5a5a;
+    /* max-width: 50rem; */
+    border: solid .1rem rgb(192, 192, 192);
+}
+.formAdd-item:last-child{
+    grid-column: 1/2;
+    display: flex;
+    align-items: center;
+}
+.formAdd-item:last-child input{
+    width: 60%;
+    max-width: 55rem;
+    background: var(--color-secundario);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.formAdd-item:last-child input:hover{
+    background: #3db8ff;
+}
+@media  screen and (min-width: 730px){
+    .formAdd{
+        grid-template-columns: 50% 50%;
+    }
+    .formAdd-item:last-child{
+        grid-column: 1/3;
+        display: flex;
+        align-items: center;
+    }
 }
