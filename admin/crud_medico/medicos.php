@@ -1,6 +1,11 @@
 <?php
     require "../../backend/functions/consultar_medicos.php";
     $consulta = consultarMedicos();
+    
+    // // Verificar los datos de la base de datos.
+    // echo "<pre>";
+    //     var_dump($row['cedula_medico']);
+    // echo "</pre>"; 
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +127,7 @@
                 </thead>
                 <tbody class="table__body" id="rowMedico">
                     <?php while($row = mysqli_fetch_assoc($consulta)): ?>
-                        <tr>
+                        <tr class="userSelect" id="<?php echo $row['cedula_medico']; ?>">
                             <td> <?php echo $row['cedula_medico']; ?> </td>
                             <td> <?php echo $row['nombre']; ?> </td>
                             <td> <?php echo $row['apellido']; ?> </td>
@@ -196,7 +201,7 @@
                         <input type="text" name="collegiate" id="collegiate">
                     </div>
                     <div>
-                        <input type="hidden" name="registrar" id="registrar" value="crear">
+                        <input type="hidden" name="accion" id="accion" value="crear">
                         <input type="submit" value="Registrar">
                     </div>
                 </form>
@@ -210,7 +215,7 @@
                     <button class="closeAccion close">X</button>
                 </div>
                 <div class="container">
-                    <form class="formulario" method="POST" action="medicos.php">
+                    <form class="formAccion">
                             <div>
                                 <label for="cedula">Cedula</label>
                                 <input type="text" name="cedula" id="cedula">
@@ -257,10 +262,10 @@
                                 <input type="text" name="collegiate" id="collegiate">
                             </div>
                         <div>
-                            <input type="submit" value="Modificar">
+                            <button type="submit" id="edit">Modificar</button>
                         </div>
                         <div>
-                            <input type="submit" value="Eliminar">
+                            <button type="submit" id="delete">Eliminar</button>
                         </div>
                     </form>
                 </div>

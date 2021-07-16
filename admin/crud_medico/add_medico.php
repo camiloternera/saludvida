@@ -1,9 +1,9 @@
 <?php
     // echo json_encode($_POST);
 
-    $registrar = (isset($_REQUEST['registrar'])) ? $_REQUEST['registrar'] : '';
+    $accion = (isset($_REQUEST['accion'])) ? $_REQUEST['accion'] : '';
 
-    if ($registrar == 'crear') {
+    if ($accion == 'crear') {
         require_once "../../backend/includes/config/database.php";
         $db = conectarDB();
         // Validar entradas de Datos
@@ -51,6 +51,10 @@
             );
         }
         echo json_encode($response);
+    }
+
+    if ($accion == 'eliminar') {
+        echo json_encode($_GET);
     }
         
 ?>
