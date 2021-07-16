@@ -22,34 +22,36 @@
 
 </head>
 <body>
-
-    <header class="site-header">
-        <div class="logo">
-            <a class="logo__text" href="/admin/index.php">
-                <i class="logo__color fas fa-plus"></i>
-                <span class="color-salud">Salud</span><span class="color-vida">Vida</span>
-            </a>
-        </div>
-        <!-- /.logo -->
-
-        <div class="admin">
-            <h1 class="admin__title">Administracion</h1>
-        </div>
-        <!-- /.admin -->
-
-        <div class="box-min-profile">
-            <div class="profile"></div>
-            <div class="close-session"></div>
-        </div>
-        <!-- /.box-min-profile -->
-
-    </header>
     <!-- /.site-header -->
 
     <nav class="menu-navegation">
         <ul>
+           <li class="items">
+                <header class="site-header">
+                    <div class="logo">
+                        <a class="logo__text-site" href="/admin/index.php">
+                            <i class="logo__color fas fa-plus"></i>
+                            <span class="color-salud">Salud</span><span class="color-vida">Vida</span>
+                        </a>
+                    </div>
+                    <!-- /.logo -->
+
+                    <div class="admin">
+                        
+                    </div>
+                    <!-- /.admin -->
+
+                    <div class="box-min-profile">
+                        <div class="profile"></div>
+                        <div class="close-session"></div>
+                    </div>
+                    <!-- /.box-min-profile -->
+
+                </header>
+            </li>
             <li class="items">
-                <a class="item" href="">Pacientes</a>
+                <a class="item" href="">Pacientes <i class="fas fa-sort-down"></i></a>
+               
                 <ul>
                     <li class="sub-item">
                         <a href="registrar_paciente.php">Listas de pacientes</a>
@@ -60,7 +62,7 @@
             </li>
             <!-- /.items  -->
             <li class="items">
-                <a class="item" href="">Medicos</a>
+                <a class="item" href="">Medicos <i class="fas fa-sort-down"></i></a>
                 <ul>
                     <li class="sub-item">
                         <a href="medicos.php">Listas de medicos</a>
@@ -71,7 +73,7 @@
             </li>
             <!-- /.items -->
             <li class="items">
-                <a class="item" href="">Citas</a>
+                <a class="item" href="">Citas <i class="fas fa-sort-down"></i></a>
                 <ul class="display">
                     <li class="sub-item">
                         <a href="">Listar citas de pacientes</a>
@@ -90,7 +92,7 @@
             </li>
             <!-- /.items -->
             <li class="items">
-                <a class="item" href="">Usuarios</a>
+                <a class="item" href="">Usuarios <i class="fas fa-sort-down"></i></a>
                 <ul>
                     <li class="sub-item">
                         <a href="">Listas de usuarios   </a>
@@ -100,166 +102,195 @@
                 <!-- /.sub-items -->
             </li>
             <!-- /.items -->
+            
         </ul>
     </nav>
     <!-- /.menu-navegation -->
 
-    <main class="wrapper" id="main">
-        <div class="btnAdd">
-            <button class="button" id="btnAddPaciente">Agregar +</button>
-        </div>
+    <div class="MainContainer">
+         <header class="cent-header">
+                    <div class="logo">
+                        <a class="logo__text-Cent" href="/admin/index.php">
+                            <i class="fas fa-hammer"></i>
+                            <spam class="Cent-admin__title">Administración</spam>
+                        </a>
+                    </div>
+                    <!-- /.logo -->
 
-        <div class="table">
-            <table>
-                <thead class="table_head">
-                    <tr>
-                        <th>Cedula</th>
-                        <th>Nombres</th>
-                        <th>Apellidos</th>
-                        <th>Edades</th>
-                        <th>Direcciones</th>
-                        <th>Telefono</th>
-                        <th>Correos</th>
-                        <th>Sexo</th>
-                        <th>Especialidad</th>
-                        <th>Numero de colegiado</th>
-                    </tr>
-                </thead>
-                <tbody class="table__body" id="rowMedico">
-                    <?php while($row = mysqli_fetch_assoc($consulta)): ?>
-                        <tr class="userSelect" id="<?php echo $row['cedula_medico']; ?>">
-                            <td> <?php echo $row['cedula_medico']; ?> </td>
-                            <td> <?php echo $row['nombre']; ?> </td>
-                            <td> <?php echo $row['apellido']; ?> </td>
-                            <td> <?php echo $row['edad']; ?> </td>
-                            <td> <?php echo $row['direccion']; ?> </td>
-                            <td> <?php echo $row['telefono']; ?> </td>
-                            <td> <?php echo $row['correo']; ?> </td>
-                            <td> <?php echo $row['sexo']; ?> </td>
-                            <td> <?php echo $row['especialidad']; ?> </td>
-                            <td> <?php echo $row['n_colegiado']; ?> </td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-                <tfoot class="table__footer">
-                    <tr>
-                        <th colspan="10">Listado de medicos</th>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-        <!-- SubVentana de Agregar Medico -->
-        <div class="modal" id="modalAdd">
-            <div class="modal__container">
-                <div class="modal__close">
-                    <button class="close">X</button>
-                </div>
-                <h3 class="text-add">Agregar Medico</h3>
-                <form class="formAdd">
-                    <div>
-                        <label for="cedula">Cedula</label>
-                        <input type="text" name="cedula" id="cedula">
+                    <div class="admin">
+                        
                     </div>
-                    <div>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name">
+                    <!-- /.admin -->
+
+                    <div class="box-min-profile">
+                        <div class="profile"></div>
+                        <div class="close-session"></div>
                     </div>
-                    <div>
-                        <label for="lastname">Apellidos</label>
-                        <input type="text" name="lastname" id="lastname">
-                    </div>
-                    <div>
-                        <label for="ages">Edad</label>
-                        <input type="number" name="ages" id="ages">
-                    </div>
-                    <div>
-                        <label for="address">Direccion</label>
-                        <input type="text" name="address" id="address">
-                    </div>
-                    <div>
-                        <label for="cellphone">Numero de celular</label>
-                        <input type="number" name="cellphone" id="cellphone">
-                    </div>
-                    <div>
-                        <label for="email">Correo</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div>
-                        <label for="sex">Sexo</label>
-                        <select name="sex" id="sex">
-                            <option value="">--- Select ---</option>
-                                <option value="F">Femenino</option>
-                                <option value="M">Masculino</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="specialty">Especialista</label>
-                        <input type="text" name="specialty" id="specialty">
-                    </div>
-                    <div>
-                        <label for="collegiate">Numero de colegiado</label>
-                        <input type="text" name="collegiate" id="collegiate">
-                    </div>
-                    <div>
-                        <input type="hidden" name="accion" id="accion" value="crear">
-                        <input type="submit" value="Registrar">
-                    </div>
-                </form>
+                    <!-- /.box-min-profile -->
+
+                </header>   
+        <main class="wrapper" id="main">
+            <div class="btnAdd">
+                <button class="button" id="btnAddPaciente">Agregar +</button>
             </div>
-        </div>
 
-        <!-- SubVentana de Actualizar/Eliminar Medico -->
-        <div class="modal" id="modalAccion">
-            <div class="modal__container">
-                <div class="modal__close">
-                    <button class="closeAccion close">X</button>
+            <div class="table">
+                <table>
+                    <thead class="table_head">
+                        <tr>
+                            <th>Cedula</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Edades</th>
+                            <th>Direcciones</th>
+                            <th>Telefono</th>
+                            <th>Correos</th>
+                            <th>Sexo</th>
+                            <th>Especialidad</th>
+                            <th>Numero de colegiado</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body" id="rowMedico">
+                        <?php while($row = mysqli_fetch_assoc($consulta)): ?>
+                            <tr>
+                                <td> <?php echo $row['cedula_medico']; ?> </td>
+                                <td> <?php echo $row['nombre']; ?> </td>
+                                <td> <?php echo $row['apellido']; ?> </td>
+                                <td> <?php echo $row['edad']; ?> </td>
+                                <td> <?php echo $row['direccion']; ?> </td>
+                                <td> <?php echo $row['telefono']; ?> </td>
+                                <td> <?php echo $row['correo']; ?> </td>
+                                <td> <?php echo $row['sexo']; ?> </td>
+                                <td> <?php echo $row['especialidad']; ?> </td>
+                                <td> <?php echo $row['n_colegiado']; ?> </td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                    <tfoot class="table__footer">
+                        <tr>
+                            <th colspan="10">Listado de medicos</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <!-- SubVentana de Agregar Medico -->
+            <div class="modal" id="modalAdd">
+                <div class="modal__container">
+                    <div class="modal__close">
+                        <button class="close">X</button>
+                    </div>
+                    <h3 class="text-add">Agregar Medico</h3>
+                    <form class="formAdd">
+                        <div class="formAdd-item">
+                            <label for="cedula">Cedula</label>
+                            <input type="text" name="cedula" id="cedula">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="name">Nombre</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="lastname">Apellidos</label>
+                            <input type="text" name="lastname" id="lastname">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="ages">Edad</label>
+                            <input type="number" name="ages" id="ages">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="address">Direccion</label>
+                            <input type="text" name="address" id="address">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="cellphone">Numero de celular</label>
+                            <input type="number" name="cellphone" id="cellphone">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="email">Correo</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="sex">Sexo</label>
+                            <select name="sex" id="sex">
+                                <option value=""></option>
+                                    <option value="F">Femenino</option>
+                                    <option value="M">Masculino</option>
+                            </select>
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="specialty">Especialista</label>
+                            <input type="text" name="specialty" id="specialty">
+                        </div>
+                        <div class="formAdd-item">
+                            <label for="collegiate">Numero de colegiado</label>
+                            <input type="text" name="collegiate" id="collegiate">
+                        </div>
+                        <div class="formAdd-item">
+                            <input type="hidden" name="registrar" id="registrar" value="crear">
+                            <input type="submit" value="Registrar">
+                        </div>
+                    </form>
                 </div>
-                <div class="container">
-                    <form class="formAccion">
+            </div>
+
+            <!-- SubVentana de Actualizar/Eliminar Medico -->
+            <div class="modal" id="modalAccion">
+                <div class="modal__container">
+                    <div class="modal__close">
+                        <button class="closeAccion close">X</button>
+                    </div>
+                    <div class="container">
+                        <form class="formulario" method="POST" action="medicos.php">
+                                <div>
+                                    <label for="cedula">Cedula</label>
+                                    <input type="text" name="cedula" id="cedula">
+                                </div>
+                                <div>
+                                    <label for="name">Nombre</label>
+                                    <input type="text" name="name" id="name">
+                                </div>
+                                <div>
+                                    <label for="lastname">Apellidos</label>
+                                    <input type="text" name="lastname" id="lastname">
+                                </div>
+                                <div>
+                                    <label for="ages">Edad</label>
+                                    <input type="number" name="ages" id="ages">
+                                </div>
+                                <div>
+                                    <label for="address">Direccion</label>
+                                    <input type="text" name="address" id="address">
+                                </div>
+                                <div>
+                                    <label for="cellphone">Numero de celular</label>
+                                    <input type="number" name="cellphone" id="cellphone">
+                                </div>
+                                <div>
+                                    <label for="email">Correo</label>
+                                    <input type="email" name="email" id="email">
+                                </div>
+                                <div>
+                                    <label for="sex">Sexo</label>
+                                    <select name="sex" id="sex">
+                                        <option value="">--- Select ---</option>
+                                        <?php ?>
+                                            <option value="F">Femenino</option>
+                                            <option value="M">Masculino</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="specialty">Especialista</label>
+                                    <input type="text" name="specialty" id="specialty">
+                                </div>
+                                <div>
+                                    <label for="collegiate">Numero de colegiado</label>
+                                    <input type="text" name="collegiate" id="collegiate">
+                                </div>
                             <div>
-                                <label for="cedula">Cedula</label>
-                                <input type="text" name="cedula" id="cedula">
+                                <input type="submit" value="Modificar">
                             </div>
                             <div>
-                                <label for="name">Nombre</label>
-                                <input type="text" name="name" id="name">
-                            </div>
-                            <div>
-                                <label for="lastname">Apellidos</label>
-                                <input type="text" name="lastname" id="lastname">
-                            </div>
-                            <div>
-                                <label for="ages">Edad</label>
-                                <input type="number" name="ages" id="ages">
-                            </div>
-                            <div>
-                                <label for="address">Direccion</label>
-                                <input type="text" name="address" id="address">
-                            </div>
-                            <div>
-                                <label for="cellphone">Numero de celular</label>
-                                <input type="number" name="cellphone" id="cellphone">
-                            </div>
-                            <div>
-                                <label for="email">Correo</label>
-                                <input type="email" name="email" id="email">
-                            </div>
-                            <div>
-                                <label for="sex">Sexo</label>
-                                <select name="sex" id="sex">
-                                    <option value="">--- Select ---</option>
-                                    <?php ?>
-                                        <option value="F">Femenino</option>
-                                        <option value="M">Masculino</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="specialty">Especialista</label>
-                                <input type="text" name="specialty" id="specialty">
-                            </div>
-                            <div>
-                                <label for="collegiate">Numero de colegiado</label>
-                                <input type="text" name="collegiate" id="collegiate">
+                                <input type="submit" value="Eliminar">
                             </div>
                         <div>
                             <button type="submit" id="edit">Modificar</button>
@@ -270,8 +301,9 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
+    
 
     <!-- Importamos los archivos .js de tipo module para import/export entre archivos  -->
     <script src="../../frontend/js/admin_index.js" type="module"></script>

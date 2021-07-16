@@ -8,6 +8,7 @@
     /* colores */
     --color-secundario: #5ec4fe;
     --color-terciario: #505050;
+    --color-4: #4bb3f0;
 }
 
 /** Globales */
@@ -63,26 +64,81 @@ input[type="submit"] {
 
 /** Container */
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 95%;
-    margin: 7rem auto 0 auto;
+    width: 100vw;
+    /* margin: 7rem auto 0 auto; */
+    height: 100vh;
+    /* border: solid 1px red; */
+    padding: 12rem 3rem;
 }
-
+@media  screen and (min-width: 1100px){
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 95%;
+        width: 100vw;
+        /* margin: 7rem auto 0 auto; */
+        height: 100vh;
+        /* border: solid 1px red; */
+        padding: 12rem 3rem;
+    }  
+    .title {
+        width: 90%;
+        max-width: 90rem;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* border: solid 1px red; */
+        justify-content: left;
+        margin-bottom: 4rem;
+        height: 95%;
+    }
+    .form-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        /* border: solid 1px red; */
+        height: 95%;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        /* border: solid 2px rgb(30, 190, 97); */
+        width: 90%;
+        max-width: 70rem;
+    }
+}
 /* title */
 .title {
     width: 90%;
+    max-width: 90rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* border: solid 1px red; */
+    justify-content: center;
+    margin-bottom: 4rem;
 }
 .img-logo {
     width: 100%;
+    min-width: 35rem;
+    /* border: solid 1px red; */
 }
+
 .logo {
     object-fit: cover;
 }
 
 .header-text {
+    width: 90%;
+    /* border: solid 1px red; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,10 +158,12 @@ input[type="submit"] {
 /** === Form === **/
 .form-login {
     width: 100%;
+    /* border: solid 1px red; */
 }
 .form {
     display: flex;
     flex-direction: column;
+    /* border: solid 2px rgb(30, 190, 97); */
 }
 .input {
     border-bottom: .2rem solid var(--color-secundario);
@@ -121,6 +179,20 @@ input[type="submit"] {
     justify-content: right;
     margin-bottom: 5rem;
 }
+.form__forget-password a{
+    color: var(--color-4);
+}
 .text-forget-password {
     font-size: 1.8rem;
+}
+
+.form-login_btn{
+    color: white;
+    background: var(--color-secundario);
+    transition: 0.15s;
+}
+.form-login_btn:hover{
+    color: white;
+    background: var(--color-4);
+    cursor: pointer;
 }

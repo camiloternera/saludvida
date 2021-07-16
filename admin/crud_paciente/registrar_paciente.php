@@ -152,6 +152,7 @@
 
 <div class="modal" id="modalAdd">
     <div class="modal__container">
+        <p>AGREGAR MEDICO</p>
         <div class="modal__close">
             <button class="close">X</button>
         </div>
@@ -168,19 +169,19 @@
             endforeach; 
         ?>
         <form class="formulario" method="POST" action="registrar_paciente.php">
-            <div>
+            <div class="formualario-item">
                 <label for="cedula">Cedula</label>
                 <input type="text" name="cedula" id="cedula" value="<?php echo $cedula; ?>">
             </div>
-            <div>
+            <div class="formualario-item">
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" value="<?php echo $name; ?>">
             </div>
-            <div>
+            <div class="formualario-item">
                 <label for="lastname">Apellidos</label>
                 <input type="text" name="lastname" id="lastname" value="<?php echo $lastname; ?>">
             </div>
-            <div>
+            <div class="formualario-item">
                 <label for="ages">Edad</label>
                 <input type="number" name="ages" id="ages" value="<?php echo $ages; ?>">
             </div>
@@ -188,15 +189,15 @@
                 <label for="address">Direccion</label>
                 <input type="text" name="address" id="address" value="<?php echo $address; ?>">
             </div>
-            <div>
+            <div class="formualario-item">
                 <label for="cellphone">telefono</label>
                 <input type="tel" name="cellphone" id="cellphone" value="<?php echo $cellphone; ?>">
             </div>
-            <div>
+            <div class="formualario-item">
                 <label for="email">Correo</label>
                 <input type="email" name="email" id="email" value="<?php echo $email; ?>">
             </div>
-            <div>
+            <div class="formualario-item">
                 <label for="sex">Sexo</label>
                 <select name="sex" id="sex">
                     <option value="">--- Select ---</option>

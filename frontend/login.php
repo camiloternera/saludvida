@@ -46,7 +46,7 @@
                 </div>
                 <!-- /.forget-password -->
 
-                <input type="submit" value="Iniciar sesión">
+                <input type="submit" value="Iniciar sesión" class="form-login_btn">
             </form>
             <!-- /.form -->
         </div>
