@@ -1,5 +1,16 @@
 <?php
-    // echo json_encode($_POST);
+
+    // Obtener todos los medicos
+    function consultarMedicos() {
+        require_once "../backend/includes/config/database.php";
+        $db = conectarDB();
+        try {
+            return $SQL_SELECT = mysqli_query($db, " SELECT * FROM medicos");
+        } catch (Exception $e) {
+            echo "Error " . $e->getMessage(). "<br>";
+            return false;
+        }
+    }
 
     $accion = (isset($_REQUEST['accion'])) ? $_REQUEST['accion'] : '';
 

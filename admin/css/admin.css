@@ -12,7 +12,7 @@
     --color-terciario: #505050;
     --white: #ffffff;
     --color-salud: rgb(133, 132, 132);
-    --buttonAdd: rgb(22, 152, 245);
+    --button-add: rgb(22, 152, 245);
     /* background-color: rgb(179,241,117); */
     /* color: green; */
     /* background-color: rgb(238,148,166); */
@@ -64,7 +64,7 @@ ul {
     padding: 0;
 }
 table {
-    font-size: 2rem;
+    /* font-size: 2rem; */
     text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
@@ -72,7 +72,7 @@ table {
     white-space: nowrap;
 }
 tbody > tr:hover {
-    background-color: var(--buttonAdd);
+    background-color: var(--button-add);
     cursor: pointer;
     color: var(--white);
 }
@@ -90,6 +90,9 @@ th {
 }
 td {
     transition: all .3s;
+}
+button {
+    cursor: pointer;
 }
 
 /** Utilidades */
@@ -189,19 +192,19 @@ ul > .items {
     background-color: var(--colorDashboard);
     /* padding: 1.5rem 0rem; */
     /* padding-right: 0; */
-    font-size: 2rem;
+    font-size: 1.8rem;
     border-bottom: solid .2rem var(--color-secundario);
     color: white;
     transition: 0.3s;
     height: 100%;
     
 }
-ul > .items a{
+ul > .items p{
     padding: 1.5rem 2rem;
     text-decoration: none;
     color: white; 
 }
-.items > a{
+.items > p{
     display: flex;
     justify-content: space-between;
 }
@@ -211,15 +214,15 @@ ul > .items a{
 ul > .sub-item {
     color: #ffffff;
     padding: 1rem;
-    padding-left: 2rem;
-    font-size: 2rem;
+    padding-left: 4rem;
+    /* font-size: 2rem; */
     /* display: none; */
     /* background: white; */
     width: 100%;
     transition: 0.2s;
 }
 ul > .sub-item:hover {
-    padding-left: 0.5rem;
+    padding-left: 2rem;
     border-right: solid .8rem white;
     /* border-bottom: solid 1px white; */
 }
@@ -236,19 +239,50 @@ ul > .sub-item a{
     width: 100%;
     /* border: solid 1px red; */
     padding: 2rem;
-    background: rgba(251, 251, 251, 0.856);
+    background-color: var(--white);
+    /* background: rgba(251, 251, 251, 0.856); */
+}
+.header-tools {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+}
+.tools {
+    display: flex;
+    align-items: center;
+}
+.tools ul {
+    display: flex;
+}
+.tools li {
+    margin-right: 2rem;
+}
+.tools li:last-of-type {
+    margin-right: 0;
+}
+.tools li button {
+    border: none;
+    padding: 1rem;
+    transition: .1s ease-in;
+    background: none;
+}
+.tools li button:hover {
+    background-color: var(--button-add);
+}
+.tools .checkbox {
+    display: flex;
+    align-items: center;
 }
 .btnAdd {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 2rem;
+    align-items: center;
 }
 .button {
-    background-color: var(--buttonAdd);
+    background-color: var(--button-add);
     color: var(--white);
     border: none;
     padding: 1rem;
-    font-size: 2rem;
     cursor: pointer;
 }
 .table {
