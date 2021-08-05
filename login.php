@@ -4,8 +4,10 @@
         if($_SESSION['rol'] == 3)       
             header("location:paciente.php");   
         else if($_SESSION['rol'] == 2)
-            header("location:medicos.php"); 
-    }  
+            header("location:medico.php"); 
+        else if($_SESSION['rol'] == 1)
+            header("location:../admin/index.php");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +40,7 @@
 
         <!-- ===== Form ===== -->
         <div class="form-login" >
-            <form class="form" action = "../backend/auth_login.php" method = "POST">
+            <form class="form" action = "backend/auth_login.php" method = "POST">
                 <input placeholder="Ingrese su cédula" class="input form__id" type="text" name="cedula" id="user">
                 <input placeholder="Ingrese su contraseña" class="input form__password" type="password" name="password" id="password">
                 <div class="form__forget-password">

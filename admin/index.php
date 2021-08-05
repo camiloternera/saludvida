@@ -1,4 +1,8 @@
-<?php include "includes/header.php"; ?>
+<?php 
+    include "../backend/includes/checkSesion.php";
+    include "../backend/includes/permisos/permiso_admin.php";
+    include "includes/header.php";
+?>
 
     <main class="wrapper" id="main">
         <p> Hello </p>

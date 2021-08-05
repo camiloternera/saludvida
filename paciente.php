@@ -1,9 +1,19 @@
+<?php
+    include "backend/includes/checkSesion.php";
+    include "backend/includes/permisos/permiso_paciente.php";
+
+    // echo "<pre>";
+    // var_dump($_SESSION);
+    // echo "</pre>";
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/paciente.css">
     <link rel="stylesheet" href="icons/fontawesome/css/all.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +23,6 @@
     <title>SaludVida</title>
 </head>
 <body>
-    <?php
-        include_once("../backend/includes/checkSesion.php");
-        include_once("../backend/includes/permiso_paciente.php");
-    ?>
     <!-- dashboard -->
     <div class="ContainerDashB">
         <!-- Parte de abajo -->

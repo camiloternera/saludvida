@@ -1,9 +1,14 @@
+<?php
+    include "backend/includes/checkSesion.php";
+    include "backend/includes/permisos/permiso_medico.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/medico.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="icons/fontawesome/css/all.min.css">
@@ -14,11 +19,6 @@
     <title>SaludVida</title>
 </head>
 <body>
-    <?php
-        include_once("../backend/includes/checkSesion.php");
-        include_once("../backend/includes/permiso_medicos.php");
-    ?>
-
     <!-- dashboard -->
     <div class="ContainerDashB">
         <!-- Parte de abajo -->
@@ -31,7 +31,7 @@
         <div class="DashContent">
             
             <div class="DashLogo">
-                <a href="/frontend/index.php">
+                <a href="medico.php">
                     <i class="color-logo fas fa-plus"></i>
                     <span id="colorA">Salud</span><span id="colorC">Vida</span>
                 </a>
@@ -80,7 +80,6 @@
                 <li class="submenu__ConsulPacientes-item"><a href="#">Buscar información</a></li>
                 <li class="submenu__ConsulPacientes-item"><a href="#">Pacientes actuales</a></li>
                 <li class="submenu__ConsulPacientes-item"><a href="#">Historial de pacientes</a></li>
-               
             </ul>
             
             

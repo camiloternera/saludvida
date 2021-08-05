@@ -1,3 +1,7 @@
+<?php
+    include "../backend/includes/checkSesion.php";
+    include "../backend/includes/permisos/permiso_admin.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion</title>
     <!-- CSS & FONTAWESOME & NORMALIZE -->
-    <link rel="stylesheet" href="../frontend/css/normalize.css">
-    <link rel="stylesheet" href="../frontend/icons/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../icons/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/admin.css">
 
 </head>
