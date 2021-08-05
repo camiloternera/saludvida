@@ -14,90 +14,100 @@
 </head>
 
 <body>
-    <!-- /.site-header -->
+    <div class="container-lateral-left">
+        <header class="site-header">
+            <div class="logo">
+                <a class="logo__text-site" href="/admin/index.php">
+                    <i class="logo__color fas fa-plus"></i>
+                    <span class="color-salud">Salud</span><span class="color-vida">Vida</span>
+                </a>
+            </div>
+            <!-- /.logo -->
 
-    <nav class="menu-navegation">
-        <ul>
-            <li class="items">
-                <header class="site-header">
-                    <div class="logo">
-                        <a class="logo__text-site" href="/admin/index.php">
-                            <i class="logo__color fas fa-plus"></i>
-                            <span class="color-salud">Salud</span><span class="color-vida">Vida</span>
+            <div class="admin">
+
+            </div>
+            <!-- /.admin -->
+
+            <div class="box-min-profile">
+                <div class="profile"></div>
+                <div class="close-session"></div>
+            </div>
+            <!-- /.box-min-profile -->
+
+        </header>
+        <!-- /.site-header -->
+        <nav class="menu-navegation">
+            <ul>
+                <li class="items">
+                    <div class="list-items">
+                        <p class="item">Pacientes</p>
+                        <span><i class="fas fa-caret-right list__arrow"></i></span>
+                    </div>
+                    <ul class="list__show">
+                        <a href="pacientes.php">
+                            <li class="sub-item">Listas de pacientes</li>
+                            <!-- /.sub-item -->
+                        </a> 
+                    </ul>
+                    <!-- /.sub-items -->
+                </li>
+                <!-- /.items  -->
+                <li class="items">
+                    <div class="list-items">
+                        <p class="item">Medicos</p>
+                        <span><i class="fas fa-caret-right list__arrow"></i></span>
+                    </div>
+                    <ul class="list__show">
+                        <a href="medicos.php">
+                            <li class="sub-item">Listas de medicos</li>
+                            <!-- /.sub-item -->
                         </a>
+                    </ul>
+                    <!-- /.sub-items -->
+                </li>
+                <!-- /.items -->
+                <li class="items">
+                    <div class="list-items">
+                        <p class="item">Citas</p>
+                        <span><i class="fas fa-caret-right list__arrow"></i></span>
                     </div>
-                    <!-- /.logo -->
-
-                    <div class="admin">
-
+                    <ul class="list__show">
+                        <a href="">
+                            <li class="sub-item">Listar citas de pacientes</li>
+                            <!-- /.sub-item -->
+                        </a>
+                        <a href="">
+                            <li class="sub-item">Listar citas de medicos</li>
+                            <!-- /.sub-item -->
+                        </a>
+                        <a href="">
+                            <li class="sub-item">Historial de citas</li>
+                            <!-- /.sub-item -->
+                        </a>
+                    </ul>
+                    <!-- /.sub-items -->
+                </li>
+                <!-- /.items -->
+                <li class="items">
+                    <div class="list-items">
+                        <p class="item">Usuarios</p>
+                        <span><i class="fas fa-caret-right list__arrow"></i></span>
                     </div>
-                    <!-- /.admin -->
+                    <ul class="list__show">
+                        <a href="">
+                            <li class="sub-item">Listas de usuarios</li>
+                            <!-- /.sub-item --> 
+                        </a>
+                    </ul>
+                    <!-- /.sub-items -->
+                </li>
+                <!-- /.items -->
 
-                    <div class="box-min-profile">
-                        <div class="profile"></div>
-                        <div class="close-session"></div>
-                    </div>
-                    <!-- /.box-min-profile -->
-
-                </header>
-            </li>
-            <li class="items">
-                <p class="item">Pacientes <i class="fas fa-sort-down"></i></p>
-
-                <ul>
-                    <li class="sub-item">
-                        <a href="pacientes.php">Listas de pacientes</a>
-                    </li>
-                    <!-- /.sub-item -->
-                </ul>
-                <!-- /.sub-items -->
-            </li>
-            <!-- /.items  -->
-            <li class="items">
-                <p class="item">Medicos<i class="fas fa-sort-down"></i></p>
-                <ul>
-                    <li class="sub-item">
-                        <a href="medicos.php">Listas de medicos</a>
-                    </li>
-                    <!-- /.sub-item -->
-                </ul>
-                <!-- /.sub-items -->
-            </li>
-            <!-- /.items -->
-            <li class="items">
-                <p class="item">Citas <i class="fas fa-sort-down"></i></p>
-                <ul class="display">
-                    <li class="sub-item">
-                        <a href="">Listar citas de pacientes</a>
-                    </li>
-                    <!-- /.sub-item -->
-                    <li class="sub-item">
-                        <a href="">Listar citas de medicos</a>
-                    </li>
-                    <!-- /.sub-item -->
-                    <li class="sub-item">
-                        <a href="">Historial de citas</a>
-                    </li>
-                    <!-- /.sub-item -->
-                </ul>
-                <!-- /.sub-items -->
-            </li>
-            <!-- /.items -->
-            <li class="items">
-                <p class="item">Usuarios <i class="fas fa-sort-down"></i></p>
-                <ul>
-                    <li class="sub-item">
-                        <a href="">Listas de usuarios </a>
-                    </li>
-                    <!-- /.sub-item -->
-                </ul>
-                <!-- /.sub-items -->
-            </li>
-            <!-- /.items -->
-
-        </ul>
-    </nav>
-    <!-- /.menu-navegation -->
+            </ul>
+        </nav>
+        <!-- /.menu-navegation -->
+    </div>
 
     <div class="main-container">
         <header class="title-header">

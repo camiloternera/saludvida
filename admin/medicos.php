@@ -142,7 +142,8 @@ require_once "../backend/functions/crud_medico.php";
             </div>
         </main>
     </div>
-
+    
+    <script src="js/admin_index.js"></script>
     <script src="js/admin_medico.js"></script>
 </body>
 

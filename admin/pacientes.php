@@ -123,6 +123,7 @@
         </main>
     </div>
 
+    <script src="js/admin_index.js"></script>
     <script src="js/admin_paciente.js"></script>
 </body>
 
