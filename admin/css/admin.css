@@ -202,7 +202,14 @@ button {
     color: white;
     transition: 0.3s;
     height: 100%;
-    overflow: hidden;    
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+.items:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+.items:last-of-type:hover {
+    background: rgb(235, 46, 46);
 }
 .list-items {
     display: flex;
@@ -224,9 +231,6 @@ button {
     color: white; 
     display: flex;
     justify-content: space-between;
-}
-.items:hover {
-    background-color: rgba(0, 0, 0, .05);
 }
 .list__show {
     transition: height .4s;

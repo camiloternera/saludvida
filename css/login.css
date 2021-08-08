@@ -60,6 +60,7 @@ input[type="submit"] {
     border-radius: .5rem;
     width: 80%;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 /** Container */
@@ -86,7 +87,7 @@ input[type="submit"] {
         /* border: solid 1px red; */
         padding: 12rem 3rem;
     }  
-    .title {
+    .logo {
         width: 90%;
         max-width: 90rem;
         margin: 0 auto;
@@ -114,8 +115,8 @@ input[type="submit"] {
         max-width: 70rem;
     }
 }
-/* title */
-.title {
+/* logo */
+.logo {
     width: 90%;
     max-width: 90rem;
     margin: 0 auto;
@@ -126,29 +127,29 @@ input[type="submit"] {
     justify-content: center;
     margin-bottom: 4rem;
 }
-.img-logo {
+.logo__img {
     width: 100%;
     min-width: 35rem;
     /* border: solid 1px red; */
 }
 
-.logo {
+.img {
     object-fit: cover;
 }
 
-.header-text {
+.logo__text {
     width: 90%;
     /* border: solid 1px red; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.header-text__text-login {
+.logo__text-login {
     margin: 2rem 0;
     color: var(--color-secundario);
     font-weight: 700;
 }
-.header-text__welcome {
+.logo__welcome {
     color: var(--color-terciario);
     font-weight: 400;
     font-family: 1.6rem;
@@ -175,24 +176,45 @@ input[type="submit"] {
 
 } */
 .form__forget-password {
-    display: flex;
-    justify-content: right;
     margin-bottom: 5rem;
+    text-align: right;
 }
 .form__forget-password a{
     color: var(--color-4);
 }
-.text-forget-password {
+.form__text-forget-password {
     font-size: 1.8rem;
 }
-
-.form-login_btn{
+.form__login-btn {
     color: white;
     background: var(--color-secundario);
     transition: 0.15s;
 }
-.form-login_btn:hover{
+.form-login-btn:hover{
     color: white;
     background: var(--color-4);
     cursor: pointer;
+}
+
+/** Mensajes **/
+.notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s ease;
+    border-radius: 1rem;
+}
+.visible {
+    opacity: 1;
+}
+/** Tipo de mensaje **/
+.correcto {
+    background-color: rgb(179,241, 117);
+    color: green;
+}
+.error {
+    background-color: rgb(238, 148, 166);
+    color: rgb(163, 0, 33);
 }

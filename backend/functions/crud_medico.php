@@ -15,7 +15,7 @@
     $accion = (isset($_REQUEST['accion'])) ? $_REQUEST['accion'] : '';
 
     if ($accion == 'crear') {
-        require_once "../../backend/includes/config/database.php";
+        require_once "../backend/includes/config/database.php";
         $db = conectarDB();
         // Validar entradas de Datos
         $cedula = filter_var($_POST['cedula_medico'], FILTER_SANITIZE_NUMBER_INT);

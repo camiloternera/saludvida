@@ -107,7 +107,9 @@
                     <!-- /.sub-items -->
                 </li>
                 <!-- /.items -->
-
+                <li class="items">
+                    <a class="item" href="../backend/cerrar_sesion.php">Cerrar sesión</a>
+                </li>
             </ul>
         </nav>
         <!-- /.menu-navegation -->
