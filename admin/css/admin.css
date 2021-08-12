@@ -5,21 +5,13 @@
 :root {
     /* Fuente */
     --font-page:  "Roboto";
-
-    /* colores */
-    --color-primario: rgb(64, 175, 255);
-    --color-secundario: rgb(55, 170, 252) ;
+    /* Colores */
+    --color-primary: rgb(22, 152, 245);
+    --color-secondary: rgb(55, 170, 252) ;
     --color-terciario: #505050;
     --white: #ffffff;
     --color-salud: rgb(133, 132, 132);
-    --button-add: rgb(22, 152, 245);
-    /* background-color: rgb(179,241,117); */
-    /* color: green; */
-    /* background-color: rgb(238,148,166); */
-    /* color: rgb(163,0,33); */
-    --color-blue1: rgb(22, 152, 245);
     --color-blue2:rgb(0, 174, 255);
-    /* --colorDashboard:rgb(45, 160, 255); */
 }
 
 /** Globales */
@@ -63,8 +55,7 @@ ul {
     list-style: none;
     padding: 0;
 }
-table {
-    /* font-size: 2rem; */
+table { 
     text-align: left;
     border-collapse: collapse;
     border-spacing: 0;
@@ -72,9 +63,11 @@ table {
     white-space: nowrap;
 }
 tbody > tr:hover {
-    background-color: var(--button-add);
-    cursor: pointer;
+    background-color: var(--color-primary);
     color: var(--white);
+}
+tbody tr th:hover {
+    cursor: pointer;
 }
 tr:nth-child(even) {
     background-color: gray;
@@ -138,7 +131,7 @@ button {
 } */
 
 .logo__text-cent{
-    color:#3db8ff;
+    color:var(--color-primary);
     font-weight: 600;
     /* border: solid 1px #3db8ff; */
     /* padding: 2rem; */
@@ -169,19 +162,24 @@ button {
 } */
 
 
-/* main */
+/** Main **/
 .main-container{
-    /* border: solid 1px red; */
     width: 100vw;
     height: 100vh;
     padding-left: 28.8rem;
-  
-    /* padding: 0 3rem; */
     display: flex;
     flex-direction: column;
 }
 .table{
     background: white;
+}
+.table__head {
+    background-color: var(--color-primary);
+    color: var(--white);
+    text-align: center;
+}
+.table__body {
+
 }
 
 /** === Menu - Navegation === **/
@@ -198,7 +196,7 @@ button {
     /* padding: 1.5rem 0rem; */
     /* padding-right: 0; */
     font-size: 1.8rem;
-    border-bottom: solid .2rem var(--color-secundario);
+    border-bottom: solid .2rem var(--color-secondary);
     color: white;
     transition: 0.3s;
     height: 100%;
@@ -293,7 +291,7 @@ button {
     background: none;
 }
 .tools li button:hover {
-    background-color: var(--button-add);
+    background-color: var(--color-primary);
 }
 .tools .checkbox {
     display: flex;
@@ -304,7 +302,7 @@ button {
     align-items: center;
 }
 .button {
-    background-color: var(--button-add);
+    background-color: var(--color-primary);
     color: var(--white);
     border: none;
     padding: 1rem;
@@ -345,11 +343,11 @@ button {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
-    background: var(--color-secundario);
+    background: var(--color-secondary);
 }
 .close {
     color: var(--white);
-    background: var(--color-secundario);
+    background: var(--color-secondary);
     border: none;
     padding: .3em 1rem;
     color: var(--white);
@@ -399,7 +397,7 @@ button {
 .form-item:last-child input{
     padding: 1rem 0;
     width: 100%;
-    background: var(--color-secundario);
+    background: var(--color-secondary);
     color: white;
     border: none;
     cursor: pointer;

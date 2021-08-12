@@ -1,11 +1,24 @@
 <?php
-
+    require(dirname(dirname(__FILE__)).'\includes\config\database.php');
+    $db = conectarDB();
+    
     // Obtener todos los medicos
     function consultarMedicos() {
-        require_once "../backend/includes/config/database.php";
         $db = conectarDB();
         try {
-            return $SQL_SELECT = mysqli_query($db, " SELECT * FROM medicos");
+            $SQL_SELECT = mysqli_query($db, " SELECT * FROM medicos");
+            return $SQL_SELECT;
+        } catch (Exception $e) {
+            echo "Error " . $e->getMessage(). "<br>";
+            return false;
+        }
+    }
+    function consultarMedico($id) {
+        $db = conectarDB();
+        $id = filter_var($_SESSION['user'], FILTER_SANITIZE_NUMBER_INT);
+        try {
+            $SQL_SELECT = mysqli_query($db, " SELECT * FROM medicos WHERE cedula_medico = $id ");
+            return $SQL_SELECT;
         } catch (Exception $e) {
             echo "Error " . $e->getMessage(). "<br>";
             return false;
@@ -15,8 +28,6 @@
     $accion = (isset($_REQUEST['accion'])) ? $_REQUEST['accion'] : '';
 
     if ($accion == 'crear') {
-        require_once "../backend/includes/config/database.php";
-        $db = conectarDB();
         // Validar entradas de Datos
         $cedula = filter_var($_POST['cedula_medico'], FILTER_SANITIZE_NUMBER_INT);
         $name = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
@@ -65,10 +76,6 @@
     }
 
     if ($accion == 'update') {
-        // Llamado a la conexion a la base de datos
-        require_once "../../backend/includes/config/database.php";
-        $db = conectarDB();
-
         // Validar entradas de Datos
         $name = filter_var($_POST['nombre'], FILTER_SANITIZE_STRING);
         $lastname = filter_var($_POST['apellido'], FILTER_SANITIZE_STRING);
@@ -118,10 +125,6 @@
     }
 
     if ($accion == 'delete') {
-        // Llamo la conexion a la base de datos
-        require_once "../../backend/includes/config/database.php";
-        $db = conectarDB();
-
         // Valido que la id sea del tipo de dato que deberia ser
         $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 

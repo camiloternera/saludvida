@@ -5,7 +5,7 @@
     // Valida que los campos no se manden vacio por $_POST
     if(!empty($_POST['cedula']) && !empty($_POST['password'])){
         // Requiere la conexion a la base de datos
-        require_once('includes/config/database.php');
+        require('includes/config/database.php');
         // Guarda la funcion de la conexion a la base de datos en una variable $db
         $db = conectarDB();
         try {

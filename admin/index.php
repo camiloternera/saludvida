@@ -1,7 +1,14 @@
-<?php include "includes/header.php"; ?>
+<?php 
+    include "includes/header.php";
+    // require(dirname(dirname(__FILE__)).'\backend\functions\');
+?>
 
     <main class="wrapper" id="main">
-        <p> Hello </p>
+        <p> <?php 
+            echo "<pre>";
+            var_dump($_SESSION);
+            echo "</pre>";
+        ?> </p>
     </main>
 
     <!-- Importamos los archivos .js de tipo module para import/export entre archivos  -->

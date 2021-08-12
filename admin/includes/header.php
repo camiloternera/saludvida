@@ -7,9 +7,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administracion</title>
+    <title>Administracion - Salud Vida</title>
     <!-- CSS & FONTAWESOME & NORMALIZE -->
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../icons/fontawesome/css/all.css">
@@ -27,18 +27,11 @@
                 </a>
             </div>
             <!-- /.logo -->
-
-            <div class="admin">
-
-            </div>
-            <!-- /.admin -->
-
             <div class="box-min-profile">
                 <div class="profile"></div>
                 <div class="close-session"></div>
             </div>
             <!-- /.box-min-profile -->
-
         </header>
         <!-- /.site-header -->
         <nav class="menu-navegation">
@@ -78,7 +71,7 @@
                     </div>
                     <ul class="list__show">
                         <a href="">
-                            <li class="sub-item">Listar citas de pacientes</li>
+                            <li class="sub-item">Crear cita</li>
                             <!-- /.sub-item -->
                         </a>
                         <a href="">

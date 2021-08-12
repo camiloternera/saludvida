@@ -6,9 +6,9 @@
     --font-page:  "Roboto";
     
     /* colores */
-    --color-secundario: #5ec4fe;
-    --color-terciario: #505050;
-    --color-4: #4bb3f0;
+    --color-primary: rgb(36,146,255);
+    --color-secondary: #505050;
+    --color-hover-login: #4bb3f0;
 }
 
 /** Globales */
@@ -146,11 +146,11 @@ input[type="submit"] {
 }
 .logo__text-login {
     margin: 2rem 0;
-    color: var(--color-secundario);
+    color: var(--color-primary);
     font-weight: 700;
 }
 .logo__welcome {
-    color: var(--color-terciario);
+    color: var(--color-secondary);
     font-weight: 400;
     font-family: 1.6rem;
     margin-bottom: 2rem;
@@ -167,7 +167,7 @@ input[type="submit"] {
     /* border: solid 2px rgb(30, 190, 97); */
 }
 .input {
-    border-bottom: .2rem solid var(--color-secundario);
+    border-bottom: .2rem solid var(--color-primary);
 }
 /* .form__id {
     
@@ -180,19 +180,19 @@ input[type="submit"] {
     text-align: right;
 }
 .form__forget-password a{
-    color: var(--color-4);
+    color: var(--color-primary);
 }
 .form__text-forget-password {
     font-size: 1.8rem;
 }
 .form__login-btn {
     color: white;
-    background: var(--color-secundario);
-    transition: 0.15s;
+    background: var(--color-primary);
+    transition: 0.5s;
 }
-.form-login-btn:hover{
+.form__login-btn:hover{
     color: white;
-    background: var(--color-4);
+    background: var(--color-hover-login);
     cursor: pointer;
 }
 

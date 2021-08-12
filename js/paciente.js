@@ -1,5 +1,3 @@
-
-
 //----------- CODIGO DEL MENÚ -----------//
 
 //Contenedor de cada item del menu
@@ -61,7 +59,6 @@ const selectOption = (elemento, num) => {
     }
     
 }
-
 
 const resetMenu = (elemento, num) => {
     elemento.style.display = "none";

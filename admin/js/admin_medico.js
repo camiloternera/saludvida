@@ -3,7 +3,8 @@ const btnAddMedico = document.getElementById('addMedico'),
       btnUpdateMedico = document.getElementById('updateMedico'),
       btnDeleteMedico = document.getElementById('deleteMedico');
 // Validar checkbox seleccionado
-const check = document.querySelectorAll('.check');
+const allCheck = document.getElementById('allCheck');
+var check = document.querySelectorAll('.check');
 // Capturar campos de textos
 const form = document.querySelector('.form');
 // Capturar input oculto
@@ -29,6 +30,8 @@ const url = "../../backend/functions/crud_medico.php";
 
 /** Funciones addEventListener */
 function eventListener() {
+    // Seleccion multiple
+    allCheck.addEventListener('click', selectMultiple);
     // Abrir ventana modal Crear
     btnAddMedico.addEventListener('click', openWindowModalAdd);
     // Abrir ventana modal Actualizar
@@ -41,6 +44,21 @@ function eventListener() {
 }
 // Ejecutar eventListener();
 eventListener();
+
+// Seleccion multiple
+function selectMultiple() {
+    if (allCheck.checked === true) {
+        check.forEach(select => {
+            select.checked = true;
+            checkSelect = select.checked;
+        });
+    } else {
+        check.forEach(select => {
+            select.checked = false;
+            checkSelect = select.checked;
+        });
+    }
+}
 
 // Abrir ventana modal
 function openWindowModalAdd() {
@@ -84,21 +102,10 @@ function openWindowModalUpdate() {
 // Cerrar ventana modal
 function closeWindowModal() {
     modal.style.display = 'none';
-
-    // Vaciar los inputs
-    cedula.value = "";
-    cedula.removeAttribute("disabled", "");
-    nameMedico.value = "";
-    lastname.value = "";
-    ages.value = "";
-    address.value = "";
-    cellphone.value = "";
-    email.value = "";
-    sex.value = ""
-    specialty.value = "";
-    collegiate.value = "";
-    collegiate.removeAttribute("disabled", "");
-
+    // Vaciar los check
+    check.forEach(list => {
+        list.checked = false;
+    });
 }
 
 /** Accion que hara el medico */
@@ -167,7 +174,8 @@ function ajaxCreateMedico(data) { // Crear medico
                 `;
                 // Agregar fila(registro) a la tabla
                 rowMedico.appendChild(newMedico);
-
+                check = document.querySelectorAll('.check');
+                form.reset();
                 closeWindowModal();
             }
         }
@@ -225,6 +233,7 @@ function ajaxDeleteMedico(id, rowDelete) { // Eliminar medico
                     if (response.respuesta === 'Successful') {
                         // Eliminar el registro del DOM
                         rowDelete.remove();
+                        check = document.querySelectorAll('.check');
                     }else {
 
                     }

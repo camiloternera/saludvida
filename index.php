@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="icons/fontawesome/css/all.css">
     <link rel="stylesheet" href="css/index.css">
-    <title>SaludVida</title>
+    <title>Salud - Vida</title>
 </head>
 <body>
     <div class="content-viewport">

@@ -30,9 +30,10 @@ function postUserCorrect(data) {
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200 || this.status === 201) {
-                const response = JSON.parse(this.responseText);
                 // console.log(this.responseText);
+                const response = JSON.parse(this.responseText);
                 if (response.url) {
+                    // Reedirijo la pagina a la url de respuesta
                     window.location.href = response.url;
                 } else {
                     showMessage(response.msg, "error");

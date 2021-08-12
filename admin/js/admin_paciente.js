@@ -3,7 +3,8 @@ const btnAddPaciente = document.getElementById('addPaciente'),
       btnUpdatePaciente = document.getElementById('updatePaciente'),
       btnDeletePaciente = document.getElementById('deletePaciente');
 // Validar checkbox seleccionado
-const check = document.querySelectorAll('.check');
+const allCheck = document.getElementById('allCheck');
+var check = document.querySelectorAll('.check');
 // Capturar campos de textos
 const form = document.querySelector('.form');
 // Capturar input oculto
@@ -26,7 +27,9 @@ const cedula = document.getElementById('cedula'),
 const url = "../../backend/functions/crud_paciente.php";
 
 /** Funciones addEventListener */
-function eventListener() {
+function eventListener(e) {
+    // Seleccion multiple
+    allCheck.addEventListener('click', selectMultiple);
     // Abrir ventana modal Crear
     btnAddPaciente.addEventListener('click', openWindowModalAdd);
     // Abrir ventana modal Actualizar
@@ -39,6 +42,21 @@ function eventListener() {
 }
 // Ejecutar eventListener();
 eventListener();
+
+// Seleccion multiple
+function selectMultiple() {
+    if (allCheck.checked === true) {
+        check.forEach(select => {
+            select.checked = true;
+            checkSelect = select.checked;
+        });
+    } else {
+        check.forEach(select => {
+            select.checked = false;
+            checkSelect = select.checked;
+        });
+    }
+}
 
 // Abrir ventana modal
 function openWindowModalAdd() {
@@ -56,6 +74,8 @@ function openWindowModalUpdate() {
             modal.style.display = 'flex';
             // Pasarle un valor al input oculto
             accion.value = 'update';
+            // Agregarle atributos desde JS al option.sex
+            sex.children[0].setAttribute("disabled", "");
             // Ejecutar funcion form, que trae el evento submit
             form.addEventListener('submit', actionForm);
 
@@ -80,23 +100,17 @@ function openWindowModalUpdate() {
 function closeWindowModal() {
     modal.style.display = 'none';
 
-    // Vaciar los inputs
-    cedula.value = "";
-    cedula.removeAttribute("disabled", "");
-    namePaciente.value = "";
-    lastname.value = "";
-    ages.value = "";
-    address.value = "";
-    cellphone.value = "";
-    email.value = "";
-    sex.value = ""
-
+    // Vaciar los check
+    check.forEach(list => {
+        list.checked = false;
+    });
 }
 
 /** Accion que hara el paciente */
 function actionForm(e) {
     // Evitar que realice la accion de recargar pagina
     e.preventDefault();
+    console.log(e)
 
     const dataForm = new FormData();
 
@@ -138,6 +152,7 @@ function ajaxCreatePaciente(data) { // Crear paciente
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200 || this.status === 201) {
+                // console.log(this.responseText)
                 const response = JSON.parse(this.responseText);
                 // Inserta un nuevo elemento a la tabla
                 const newPaciente = document.createElement('tr');
@@ -156,7 +171,11 @@ function ajaxCreatePaciente(data) { // Crear paciente
                 `;
                 // Agregar fila(registro) a la tabla
                 rowPaciente.appendChild(newPaciente);
-
+                // Limpiar el formulario
+                form.reset();
+                // Reasignarle valores al check
+                check = document.querySelectorAll('.check');
+                // Cerrar la ventana modal
                 closeWindowModal();
             }
         }
@@ -209,12 +228,11 @@ function ajaxDeletePaciente(id, rowDelete) { // Eliminar paciente
             if (this.readyState === 4) {
                 if (this.status === 200 || this.status === 201) {
                     const response = JSON.parse(xhttp.responseText);
-
                     if (response.respuesta === 'Successful') {
                         // Eliminar el registro del DOM
                         rowDelete.remove();
-                    }else {
-
+                        // Reasignarle valores al check
+                        check = document.querySelectorAll('.check');
                     }
                 }
             }

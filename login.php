@@ -39,7 +39,7 @@
 
         <!-- ===== Form ===== -->
         <div class="form-login" >
-            <form class="form" id="formLogin">
+            <form class="form" id="formLogin" action = "backend/auth_login.php" method = "POST">
                 <input placeholder="Ingrese su cédula" class="input form__id" type="text" name="cedula" id="user">
                 <input placeholder="Ingrese su contraseña" class="input form__password" type="password" name="password" id="password">
                 <div class="form__forget-password">

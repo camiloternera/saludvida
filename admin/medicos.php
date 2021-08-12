@@ -1,21 +1,18 @@
 <?php
-require_once "../backend/functions/crud_medico.php";
-
+    require(dirname(dirname(__FILE__)).'\backend\functions\crud_medico.php');
+    include('includes/header.php');
 // // Verificar los datos de la base de datos.
 // echo "<pre>";
 // var_dump($row['cedula_medico']);
 //     $row = mysqli_fetch_assoc($consulta);
 // echo "</pre>";
 ?>
-
-<?php include "includes/header.php"; ?>
-
         <main class="wrapper" id="main">    
             <div class="header-tools">
                 <div class="tools">
                     <ul>
                         <li class="checkbox">
-                            <span><input type="checkbox"></span>
+                            <span><input id="allCheck" type="checkbox"></span>
                         </li>
                         <li>
                             <button id="updateMedico">
@@ -120,7 +117,7 @@ require_once "../backend/functions/crud_medico.php";
                         <div class="form-item">
                             <label for="sex">Sexo</label>
                             <select name="sex" id="sex">
-                                <option value="-- Selecciona una opción --"></option>
+                                <option selected disabled>-- Selecciona una opción --</option>
                                 <option value="F">Femenino</option>
                                 <option value="M">Masculino</option>
                             </select>

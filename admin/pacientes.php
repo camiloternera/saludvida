@@ -1,13 +1,14 @@
 <?php 
-    require_once "../backend/functions/crud_paciente.php";
-    include "includes/header.php";
+    // define('__ROOT__', dirname(dirname(__FILE__)));
+    require(dirname(dirname(__FILE__)).'\backend\functions\crud_paciente.php');
+    include('includes/header.php');
 ?>
         <main class="wrapper" id="main">    
             <div class="header-tools">
                 <div class="tools">
                     <ul>
                         <li class="checkbox">
-                            <span><input type="checkbox"></span>
+                            <span><input id="allCheck" type="checkbox"></span>
                         </li>
                         <li>
                             <button id="updatePaciente">
@@ -42,7 +43,7 @@
                         </tr>
                     </thead>
                     <tbody class="table__body" id="rowPaciente">
-                        <!-- Leer medicos -> admin_medico.js -->
+                        <!-- Leer pacientes -> admin_paciente.js -->
                         <?php $SQL_SELECT = consultarPacientes();
                             while ($row = mysqli_fetch_assoc($SQL_SELECT)) : ?>
                                 <tr class="userSelect">
@@ -60,7 +61,7 @@
                     </tbody>
                     <tfoot class="table__footer">
                         <tr>
-                            <th colspan="10">Listado de medicos</th>
+                            <th colspan="10" style="text-align: center;">Listado de pacientes</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -108,7 +109,7 @@
                         <div class="form-item">
                             <label for="sex">Sexo</label>
                             <select name="sex" id="sex">
-                                <option value="-- Selecciona una opción --"></option>
+                                <option selected disabled>-- Selecciona una opción --</option>
                                 <option value="F">Femenino</option>
                                 <option value="M">Masculino</option>
                             </select>
