@@ -1,11 +1,11 @@
 <?php
     require(dirname(dirname(__FILE__)).'\backend\functions\crud_medico.php');
-    include('includes/header.php');
-// // Verificar los datos de la base de datos.
-// echo "<pre>";
-// var_dump($row['cedula_medico']);
-//     $row = mysqli_fetch_assoc($consulta);
-// echo "</pre>";
+    include('includes\template\header.php');
+    // // Verificar los datos de la base de datos.
+    // echo "<pre>";
+    // var_dump($row['cedula_medico']);
+    //     $row = mysqli_fetch_assoc($consulta);
+    // echo "</pre>";
 ?>
         <main class="wrapper" id="main">    
             <div class="header-tools">

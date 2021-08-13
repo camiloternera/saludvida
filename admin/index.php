@@ -1,6 +1,5 @@
 <?php 
-    include "includes/header.php";
-    // require(dirname(dirname(__FILE__)).'\backend\functions\');
+    include('includes\template\header.php');
 ?>
 
     <main class="wrapper" id="main">

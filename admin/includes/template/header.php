@@ -1,6 +1,6 @@
 <?php
-    include "../backend/includes/checkSesion.php";
-    include "../backend/includes/permisos/permiso_admin.php";
+    require(dirname(dirname(dirname(dirname(__FILE__)))).'\backend\includes\checkSesion.php');
+    require(dirname(dirname(dirname(dirname(__FILE__)))).'\backend\includes\permisos\permiso_admin.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +70,7 @@
                         <span><i class="fas fa-caret-right list__arrow"></i></span>
                     </div>
                     <ul class="list__show">
-                        <a href="">
+                        <a href="crear_citas.php">
                             <li class="sub-item">Crear cita</li>
                             <!-- /.sub-item -->
                         </a>

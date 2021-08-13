@@ -1,5 +1,5 @@
-<?php 
-    require(dirname(dirname(__FILE__)).'\backend\functions\crud_paciente.php');
+<?php
+    require(dirname(dirname(__FILE__)).'\backend\functions\crud_citas.php');
     include('includes\template\header.php');
 ?>
         <main class="wrapper" id="main">    
@@ -10,19 +10,19 @@
                             <span><input id="allCheck" type="checkbox"></span>
                         </li>
                         <li>
-                            <button id="updatePaciente">
+                            <button id="updateCitas">
                                 <i class="fas fa-pen"></i>
                             </button>
                         </li>
                         <li>
-                            <button id="deletePaciente">
+                            <button id="deleteCitas">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </li>
                     </ul>
                 </div>
                 <div class="btnAdd">
-                    <button class="button" id="addPaciente">Agregar +</button>
+                    <button class="button" id="addCitas">Agregar +</button>
                 </div>
             </div>
 
@@ -31,51 +31,48 @@
                     <thead class="table__head">
                         <tr>
                             <th></th>
-                            <th>Cedula</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>Edades</th>
-                            <th>Direcciones</th>
-                            <th>Telefono</th>
-                            <th>Correos</th>
-                            <th>Sexo</th>
+                            <th>Codico</th>
+                            <th>Pacientes</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Medicos</th>
+                            <th>Motivo</th> 
                         </tr>
                     </thead>
-                    <tbody class="table__body" id="rowPaciente">
-                        <!-- Leer pacientes -> admin_paciente.js -->
-                        <?php $SQL_SELECT = consultarPacientes();
-                            while ($row = mysqli_fetch_assoc($SQL_SELECT)) : ?>
+                    <tbody class="table__body" id="rowMedico">
+                        <!-- Leer citas -> admin_crear-citas.js -->
+                        <?php $result = consultarCitas();
+                            while ($row = mysqli_fetch_assoc($result)) : ?>
                                 <tr class="userSelect">
-                                    <th><input type="checkbox" class="check" id="<?php echo $row['cedula_paciente']; ?>"></th>
+                                    <th><input type="checkbox" class="check" id="<?php echo $row['codigo_cita']; ?>"></th>
+                                    <td> <?php echo $row['codigo_cita']; ?> </td>
                                     <td> <?php echo $row['cedula_paciente']; ?> </td>
-                                    <td> <?php echo $row['nombre']; ?> </td>
-                                    <td> <?php echo $row['apellido']; ?> </td>
-                                    <td> <?php echo $row['edad']; ?> </td>
-                                    <td> <?php echo $row['direccion']; ?> </td>
-                                    <td> <?php echo $row['telefono']; ?> </td>
-                                    <td> <?php echo $row['correo']; ?> </td>
-                                    <td> <?php echo $row['sexo']; ?> </td>
+                                    <td> <?php echo $row['fecha']; ?> </td>
+                                    <td> <?php echo $row['hora']; ?> </td>
+                                    <td> <?php echo $row['cedula_medico']; ?> </td>
+                                    <td> <?php echo $row['motivo']; ?> </td>
                                 </tr>
                         <?php endwhile; ?>
                     </tbody>
                     <tfoot class="table__footer">
                         <tr>
-                            <th colspan="10" style="text-align: center;">Listado de pacientes</th>
+                            <th colspan="10" style="text-align: center;">Listado de citas pendientes</th>
                         </tr>
                     </tfoot>
                 </table>
             </div>
-            <!-- SubVentana de Agregar Paciente -->
+            <!-- SubVentana de Agregar Medico -->
             <div class="modal" id="modal">        
                 <div class="modal__container">
                     <div class="modal__close">
                         <div class="text-add">
-                            <h3>Agregar Paciente</h3>
+                            <h3>Agregar Cita</h3>
                         </div>
                         <div>
                             <button class="close" type="click">X</button>
                         </div>
                     </div>
+                    <!-- /.modal__close -->
                     <form class="form">
                         <div class="form-item">
                             <label for="cedula">Cedula</label>
@@ -102,29 +99,21 @@
                             <input type="number" name="cellphone" id="cellphone">
                         </div>
                         <div class="form-item">
-                            <label for="email">Correo</label>
-                            <input type="email" name="email" id="email">
-                        </div>
-                        <div class="form-item">
-                            <label for="sex">Sexo</label>
-                            <select name="sex" id="sex">
-                                <option selected disabled>-- Selecciona una opción --</option>
-                                <option value="F">Femenino</option>
-                                <option value="M">Masculino</option>
-                            </select>
-                        </div>
-                        <div class="form-item">
                             <input type="hidden" id="accion">
                             <input type="submit" value="Registrar">
                         </div>
                     </form>
+                    <!-- /.form -->
                 </div>
+                <!-- /.modal__container -->
             </div>
+            <!-- /.modal -->
         </main>
+        <!-- /.wrapper -->
     </div>
-
+    <!-- Script JavaScript -->
     <script src="js/admin_index.js"></script>
-    <script src="js/admin_paciente.js"></script>
+    <script src="js/admin_crear-citas.js"></script>
 </body>
 
 </html>
