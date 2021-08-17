@@ -6,7 +6,7 @@ listItems.forEach(listItem => {
     // Capturar evento click por cada Item
     listItem.addEventListener('click', () => {
         listItem.classList.toggle("arrow");
-
+        
         let height = 0;
         // Capturar el hermano del Elemento listItem
         let subItem = listItem.nextElementSibling;

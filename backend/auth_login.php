@@ -28,17 +28,17 @@
                 switch ($_SESSION['rol']) {
                     case 1:
                         $response = array(
-                            'url' => '../admin/index.php'
+                            'url' => $_SERVER['HTTP_ORIGIN'].dirname(dirname($_SERVER['REQUEST_URI'])).'/admin/index.php'
                         );
                         break;
                     case 2:
                         $response = array(
-                            'url' => '../medico.php'
+                            'url' => $_SERVER['HTTP_ORIGIN'].dirname(dirname($_SERVER['REQUEST_URI'])).'/medico.php'
                         );
                         break;
                     case 3:
                         $response = array(
-                            'url' => '../paciente.php'
+                            'url' => $_SERVER['HTTP_ORIGIN'].dirname(dirname($_SERVER['REQUEST_URI'])).'/paciente.php'
                         );
                         break;
                 }

@@ -1,7 +1,7 @@
 // Form
 const form = document.getElementById('formLogin');
 //URL
-const url = "../backend/auth_login.php";
+const url = "backend/auth_login.php";
 // Accion del form al evento submit
 form.addEventListener('submit', (e) => {
     // Evito que la pagina se recargue
@@ -30,8 +30,9 @@ function postUserCorrect(data) {
     xhttp.onreadystatechange = function () {
         if (this.readyState === 4) {
             if (this.status === 200 || this.status === 201) {
-                // console.log(this.responseText);
+                console.log(this.responseText);
                 const response = JSON.parse(this.responseText);
+                console.log(response)
                 if (response.url) {
                     // Reedirijo la pagina a la url de respuesta
                     window.location.href = response.url;
